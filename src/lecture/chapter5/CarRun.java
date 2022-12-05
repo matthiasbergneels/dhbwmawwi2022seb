@@ -4,9 +4,14 @@ public class CarRun {
 
     public static void main(String[] args) {
 
-        Car myCar = new Car("Fiat", "Rot", 156);
-        Car yourCar = new Car("Mercedes", "Schwarz", 500);
+        //System.out.println("Anzahl Autos: " + Car.getCarCount());
+
+        Car myCar = new Car(Car.CarBrand.FIAT, Car.ALLOWED_COLOR_RED, 156);
+        Car yourCar = new Car(Car.CarBrand.MERCEDES, Car.ALLOWED_COLOR_BLACK, 500);
         Car hisCar = new Car();
+        Car herCar = new Car();
+
+        System.out.println("Anzahl Autos: " + Car.getCarCount());
 
         /*
         myCar.brand = "Fiat";
@@ -39,5 +44,14 @@ public class CarRun {
         System.out.println("Aktuelle Geschwindigkeit von meinem Auto: " + myCar.getCurrentSpeedInKmh() + " km/h");
         System.out.println("Aktuelle Geschwindigkeit von deinem Auto: " + yourCar.getCurrentSpeedInKmh() + " km/h");
 
+        System.out.println(myCar);
+        System.out.println(yourCar);
+        System.out.println(hisCar);
+
+        Car schnurziPupsCar = myCar;
+
+        System.out.println(schnurziPupsCar);
+
+        System.out.println("Anzahl Autos: " + Car.getCarCount());
     }
 }

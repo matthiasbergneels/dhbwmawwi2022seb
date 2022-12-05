@@ -14,6 +14,7 @@ public class IfExamples {
         }
 
 
+
         System.out.println("Geschwindigkeits-Check:");
         int speed = 49;
         boolean inVillage = false;

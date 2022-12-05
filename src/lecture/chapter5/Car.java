@@ -2,28 +2,59 @@ package lecture.chapter5;
 
 public class Car {
 
+    // Instanz Attribute
     private String color;
     private int hp;             // --> horsePower
-    public String brand;
+    public final CarBrand brand;
     private int currentSpeedInKmh;
+
+    // Klassen Attribute
+    private static int carCount;
 
     public static final String ALLOWED_COLOR_RED = "rot";
     public static final String ALLOWED_COLOR_GREY = "grau";
     public static final String ALLOWED_COLOR_BLACK = "schwarz";
     public static final String ALLOWED_COLOR_WHITE = "weiss";
 
-    Car(){
-        this("Tesla", "weiß", 380);
+
+    public enum CarBrand {
+        FIAT {
+            public String toString(){
+                return "Fiat";
+            }
+        },
+        MERCEDES{
+            public String toString(){
+                return "Mercedes";
+            }
+        },
+        BMW,
+        TESLA,
+        JEEP;
+
     }
 
-    Car(String brand, String color, int hp){
-        this.setBrand(brand);
+    // Klassen Konstruktor
+    static {
+        carCount = 5;
+    }
+
+    // Instanz Konstruktoren
+    public Car(){
+        this(CarBrand.TESLA, "weiß", 380);
+    }
+
+    public Car(CarBrand brand, String color, int hp){
+        this.brand = brand;
         this.setColor(color);
         this.setHp(hp);
 
         currentSpeedInKmh = 0;
+
+        carCount++;
     }
 
+    // Instanz Methoden
     public void accelerate(int accelerationDeltaInKmh){
         if(accelerationDeltaInKmh > 0 && accelerationDeltaInKmh < 50){
             currentSpeedInKmh += accelerationDeltaInKmh;
@@ -47,7 +78,7 @@ public class Car {
         return this.color;
     }
 
-    public String getBrand() {
+    public CarBrand getBrand() {
         return brand;
     }
 
@@ -70,7 +101,15 @@ public class Car {
         this.hp = hp;
     }
 
-    public void setBrand(String brand) {
+    /*
+    public void setBrand(BRANDS brand) {
         this.brand = brand;
+    }
+
+     */
+
+    // Klassen Methode
+    public static int getCarCount(){
+        return carCount;
     }
 }
