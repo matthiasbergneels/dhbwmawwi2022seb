@@ -4,14 +4,17 @@ public class CarRun {
 
     public static void main(String[] args) {
 
-        //System.out.println("Anzahl Autos: " + Car.getCarCount());
+        System.out.println("Anzahl Autos: " + Car.getCarCount());
 
-        Car myCar = new Car(Car.CarBrand.FIAT, Car.ALLOWED_COLOR_RED, 156);
-        Car yourCar = new Car(Car.CarBrand.MERCEDES, Car.ALLOWED_COLOR_BLACK, 500);
+        Car myCar = new Car(CarBrand.FIAT, Car.ALLOWED_COLOR_RED, 156);
+        Car yourCar = new Car(CarBrand.MERCEDES, Car.ALLOWED_COLOR_BLACK, 500);
         Car hisCar = new Car();
         Car herCar = new Car();
 
         System.out.println("Anzahl Autos: " + Car.getCarCount());
+
+        System.out.println("Preisklasse für myCar ("+myCar.brand+"): " + myCar.getPriceClass());
+        System.out.println("Preisklasse für yourCar ("+yourCar.brand+"): " + yourCar.getPriceClass());
 
         /*
         myCar.brand = "Fiat";

@@ -16,24 +16,6 @@ public class Car {
     public static final String ALLOWED_COLOR_BLACK = "schwarz";
     public static final String ALLOWED_COLOR_WHITE = "weiss";
 
-
-    public enum CarBrand {
-        FIAT {
-            public String toString(){
-                return "Fiat";
-            }
-        },
-        MERCEDES{
-            public String toString(){
-                return "Mercedes";
-            }
-        },
-        BMW,
-        TESLA,
-        JEEP;
-
-    }
-
     // Klassen Konstruktor
     static {
         carCount = 5;
@@ -64,6 +46,9 @@ public class Car {
 
     public void brake(){
         currentSpeedInKmh = currentSpeedInKmh - 10;
+        if(currentSpeedInKmh < 0){
+            currentSpeedInKmh = 0;
+        }
     }
 
     public void fullBrake(){
@@ -101,11 +86,14 @@ public class Car {
         this.hp = hp;
     }
 
+    public String getPriceClass(){
+        return brand.getPriceClass();
+    }
+
     /*
     public void setBrand(BRANDS brand) {
         this.brand = brand;
     }
-
      */
 
     // Klassen Methode
