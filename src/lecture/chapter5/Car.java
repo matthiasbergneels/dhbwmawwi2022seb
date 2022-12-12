@@ -45,7 +45,9 @@ public class Car {
     }
 
     public void brake(){
-        currentSpeedInKmh = currentSpeedInKmh - 10;
+        int speedDeltaInKmh = 10;
+
+        currentSpeedInKmh = currentSpeedInKmh - speedDeltaInKmh;
         if(currentSpeedInKmh < 0){
             currentSpeedInKmh = 0;
         }
@@ -86,6 +88,10 @@ public class Car {
         this.hp = hp;
     }
 
+    public static int getCarCount(){
+        return carCount;
+    }
+
     public String getPriceClass(){
         return brand.getPriceClass();
     }
@@ -97,7 +103,9 @@ public class Car {
      */
 
     // Klassen Methode
-    public static int getCarCount(){
-        return carCount;
+
+    protected void finalize(){
+        carCount--;
+        System.out.println("Das Auto der Marke " + this.brand + " (Farbe: " + this.color + ") wurde verschrottet");
     }
 }

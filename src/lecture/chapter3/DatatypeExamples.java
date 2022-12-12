@@ -14,6 +14,10 @@ public class DatatypeExamples {
 
         numberA = 10;
 
+        if(numberA > 5){
+            int numberB = 100;
+        }
+
         System.out.println(numberA);
 
         // Variablen Deklaration + Initialisierung

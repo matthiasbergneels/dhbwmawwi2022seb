@@ -1,7 +1,12 @@
 package lecture.chapter5;
 
 public enum CarBrand {
-    TESLA("$$"),
+    TESLA("$$"){
+        @Override
+        public String toString() {
+            return super.toString() + " voll elektrisch";
+        }
+    },
     FIAT("$"),
     MERCEDES("$$$"),
     BMW("$$$");
@@ -37,6 +42,6 @@ public enum CarBrand {
             case FIAT -> "Fiat";
             case MERCEDES -> "Mercedes";
             case BMW -> "BMW";
-        };
+        } +  "(" + priceClass + ")";
     }
 }

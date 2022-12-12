@@ -10,6 +10,5 @@ public class SumUpRun {
         System.out.println(summarizer.sum(1, 2, 3));
         System.out.println(summarizer.sum(1, 2, 3, 4));
         System.out.println(summarizer.sum(1, 2, 3, 4, 5));
-
     }
 }

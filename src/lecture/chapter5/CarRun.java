@@ -11,6 +11,12 @@ public class CarRun {
         Car hisCar = new Car();
         Car herCar = new Car();
 
+        new Car();
+        new Car();
+        new Car();
+
+        Car[] garage = {new Car(), new Car(), new Car(), new Car()};
+
         System.out.println("Anzahl Autos: " + Car.getCarCount());
 
         System.out.println("Preisklasse für myCar ("+myCar.brand+"): " + myCar.getPriceClass());
@@ -54,6 +60,24 @@ public class CarRun {
         Car schnurziPupsCar = myCar;
 
         System.out.println(schnurziPupsCar);
+
+        System.out.println("Anzahl Autos: " + Car.getCarCount());
+
+        for( CarBrand currentBrand : CarBrand.values()){
+            System.out.println(currentBrand);
+        }
+
+        myCar = null;
+        schnurziPupsCar = null;
+
+
+        System.gc();
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException("Da ist was scheif gegangen beim warten");
+        }
 
         System.out.println("Anzahl Autos: " + Car.getCarCount());
     }
