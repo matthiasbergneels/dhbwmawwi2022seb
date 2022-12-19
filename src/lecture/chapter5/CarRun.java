@@ -80,5 +80,8 @@ public class CarRun {
         }
 
         System.out.println("Anzahl Autos: " + Car.getCarCount());
+
+        System.out.println(CarBrand.TESLA);
+        System.out.println(CarBrand.MERCEDES);
     }
 }

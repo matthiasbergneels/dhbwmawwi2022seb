@@ -1,6 +1,6 @@
 package lecture.chapter6;
 
-public class Animal {
+public abstract class Animal {
 
     private float weight;
     private float size;
@@ -12,7 +12,7 @@ public class Animal {
         this.description = description;
     }
 
-    public void move(){
+    public final void move(){           // final --> Methode darf in Subklassen nicht überschreiben werden ABER überladen geht noch
         System.out.println("Das Tier " + description + " bewegt sich!");
     }
 
@@ -20,9 +20,7 @@ public class Animal {
         System.out.println("Das Tier " + description + " frisst!");
     }
 
-    public void breath(){
-        System.out.println("Das Tier " + description + " atmet!");
-    }
+    public abstract void breath();
 
     public float getWeight() {
         return weight;
@@ -46,5 +44,10 @@ public class Animal {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Beschreibung: " + getDescription() + ", Gewicht: " + getWeight() + " kg, Größe: " + getSize() + " cm";
     }
 }
