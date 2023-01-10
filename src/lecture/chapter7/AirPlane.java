@@ -44,4 +44,8 @@ public class AirPlane implements Bookable{
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Flugzeug mit " + seats.length + " Plätzen, davon " + freeSlots() + " frei.";
+    }
 }
