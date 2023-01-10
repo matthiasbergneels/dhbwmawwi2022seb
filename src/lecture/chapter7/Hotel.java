@@ -1,6 +1,6 @@
 package lecture.chapter7;
 
-public class Hotel {
+public class Hotel implements Bookable{
 
     private int roomCount;
     private int bookedRoomCount;
@@ -15,5 +15,21 @@ public class Hotel {
     }
 
 
+    @Override
+    public int freeSlots() {
+        return roomCount - bookedRoomCount;
+    }
+
+    @Override
+    public boolean book(int slotCount) {
+        if(slotCount > freeSlots()){
+            return false;
+        }
+
+        bookedRoomCount += slotCount;
+
+        return true;
+
+    }
 }
 
