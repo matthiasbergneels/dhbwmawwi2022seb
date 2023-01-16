@@ -7,6 +7,10 @@ public class Calculator {
     }
 
     public double multiply(double numberA, double numberB){
-        return numberA+numberB;
+        return numberA * numberB;
+    }
+
+    public double minus(double numberA, double numberB){
+        return numberA - numberB;
     }
 }
