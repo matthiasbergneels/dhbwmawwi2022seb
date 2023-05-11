@@ -1,5 +1,7 @@
 package lecture.chapter7;
 
+import lecture.chapter8.NotEnoughFreeSlotsException;
+
 public class Hotel implements PriorityBookable, Comparable, Cloneable{
 
     private int roomCount;
@@ -23,15 +25,12 @@ public class Hotel implements PriorityBookable, Comparable, Cloneable{
     }
 
     @Override
-    public boolean book(int slotCount) {
+    public void book(int slotCount) throws NotEnoughFreeSlotsException {
         if(slotCount > freeSlots()){
-            return false;
+            throw new NotEnoughFreeSlotsException(freeSlots(), slotCount);
         }
 
         bookedRoomCount += slotCount;
-
-        return true;
-
     }
 
     @Override

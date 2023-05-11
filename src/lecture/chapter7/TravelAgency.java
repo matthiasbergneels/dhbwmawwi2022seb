@@ -1,8 +1,10 @@
 package lecture.chapter7;
 
+import lecture.chapter8.NotEnoughFreeSlotsException;
+
 public class TravelAgency {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NotEnoughFreeSlotsException{
 
         Hotel hilton = new Hotel(100);
         Hotel holidayInn = new Hotel(480);
@@ -12,12 +14,13 @@ public class TravelAgency {
         // Narrowing Cast
         Bookable bookableOne = hilton;
 
+        /*
         // Hotel gefunden
         checkSlotsAndBook(2, hilton);
 
         // Flugzeug gefunden
         checkSlotsAndBook(2, planeTwo);
-
+         */
 
         Bookable[] bookableEntities = new Bookable[5];
 
@@ -36,17 +39,29 @@ public class TravelAgency {
             System.out.println("Freie Plätze: " + bookableEntity.freeSlots());
 
             // Polymorphie
-            boolean successfullBooking = bookableEntity.book(100);
+            try {
+                bookableEntity.book(100);
+                System.out.println("Erfolgreich - 100 Plätze gebucht.");
+            } catch(NotEnoughFreeSlotsException e){
+                System.out.println("Buchen war nicht erfolgreich!");
+                System.out.println(e.getMessage());
 
-            if(successfullBooking){
-                System.out.println("Die Plätze wurden gebucht");
-                System.out.println("Es sind noch " + bookableEntity.freeSlots() + " Plätze frei");
-            } else {
-                System.out.println("Nicht genug freie Plätze");
-                if(bookableEntity instanceof PriorityBookable priorityBookableEntity){
-                    priorityBookableEntity.bookWithPriority(100);
+                try {
+                    bookableEntity.book(e.getFreeSlots());
+                    System.out.println("Erfolgreich - restliche Plätze gebucht");
+                }catch(NotEnoughFreeSlotsException e1){
+                    System.out.println("Hat wieder nicht geklappt.");
+                    throw e1;
                 }
+
+                return;
+
+            } catch (Exception e){
+                System.out.println("Ich fange alle Ausnahmen.");
+            }  finally {
+                System.out.println("An mir geht kein Weg vorbei!");
             }
+
 
             if(bookableEntity instanceof AirPlane currentPlane){
                 currentPlane.fly();
@@ -56,6 +71,7 @@ public class TravelAgency {
         }
     }
 
+    /*
     private static boolean checkSlotsAndBook(int slotsToBook, Bookable bookingEntity){
         System.out.println("Buchung in: " + bookingEntity);
         if(bookingEntity.freeSlots() >= slotsToBook){
@@ -65,4 +81,6 @@ public class TravelAgency {
         System.out.println("Nicht genug freie Plätze");
         return false;
     }
+
+     */
 }
