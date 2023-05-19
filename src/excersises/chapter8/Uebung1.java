@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Uebung1 {
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         FileWriter datei = null;
 
@@ -20,20 +20,22 @@ public class Uebung1 {
             datei.write(text, 0, text.length());
             datei.flush();
 
-        }catch(IOException e){
-            System.out.println("Hat nicht geklappt.");
-            return;
-
-        }finally{
+        } catch(IOException e){
+            System.out.println("Da ist etwas mit ausgabe.txt schief gegangen");
+        } finally {
             try {
+                // Schliessen der Datei-Ressource
                 datei.close();
-            }catch(IOException e){
-
+            } catch(IOException e){
+                System.out.println("Fehler beim schliessen der Datei.");
             }
         }
 
+
+
         // ARM (Automatic-Ressource-Management --> try-with-Ressource)
         try(FileWriter datei2 = new FileWriter("ausgabe2.txt")){
+
             String text;
 
             text = "1\n";
