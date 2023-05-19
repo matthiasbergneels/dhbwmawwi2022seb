@@ -2,6 +2,10 @@ package lecture.excursion.innerclass;
 
 public class OuterClass {
 
+    public static interface Printable{
+        void printMessage(String message);
+    }
+
     private static String staticInfo = "Äußere Klasse statische Info";
     private String instanceInfo = "Äußere Klassse Instanz Info ";
 
@@ -70,6 +74,50 @@ public class OuterClass {
         myInnerLocalClassObject.printMessage(message);
     }
 
+    public void printFromAnonymousClass(String message){
+
+        OuterClass.Printable myAnonymousClassObject = new Printable() {
+            private int counter = 0;
+
+            // Geschachtelte anonyme Klasse in einer Anonymen Klasse
+            OuterClass.Printable printableObject = new Printable() {
+                @Override
+                public void printMessage(String message){
+                    counter++;
+                    System.out.println("Nachricht von " + this.getClass() + ": " + message);
+                    System.out.println("Static Info: " + staticInfo);
+                    System.out.println("Instance Info: " + instanceInfo);
+                    System.out.println("Methoden-Aufrufe: " + counter);
+                }
+            };
+            @Override
+            public void printMessage(String message){
+                counter++;
+                System.out.println("Nachricht von " + this.getClass() + ": " + message);
+                System.out.println("Static Info: " + staticInfo);
+                System.out.println("Instance Info: " + instanceInfo);
+                System.out.println("Methoden-Aufrufe: " + counter);
+                printableObject.printMessage(message);
+            }
+
+            public int getCounter(){
+                return counter;
+            }
+        };
+
+        myAnonymousClassObject.printMessage(message);
+    }
+
+    public void printWithLambdaFunction(String messageToLambdaFunction){
+        Printable myLambdaFunction = message -> {
+            System.out.println("Nachricht von " + this.getClass() + ": " + message);
+            System.out.println("Static Info: " + staticInfo);
+            System.out.println("Instance Info: " + instanceInfo);
+        };
+
+        myLambdaFunction.printMessage(messageToLambdaFunction);
+    }
+
 
     public static void main(String[] args) {
         String message = "Hello from the inner World";
@@ -108,6 +156,12 @@ public class OuterClass {
         System.out.println("========================================");
         myOuterClass.printSecondMessageFromInnerLocalClass(message);
 
+        System.out.println("Ausgabe über innere anonyme Klasse 4711:");
+        System.out.println("========================================");
+        myOuterClass.printFromAnonymousClass(message);
 
+        System.out.println("Ausgabe über Lambda-Funktion 4711:");
+        System.out.println("========================================");
+        myOuterClass.printWithLambdaFunction(message);
     }
 }
