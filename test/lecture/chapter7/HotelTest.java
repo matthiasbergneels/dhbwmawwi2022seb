@@ -57,4 +57,9 @@ class HotelTest {
             }
         });
     }
+
+    @Test
+    void bookDoesNotThrowsExceptionWithLambdaFunction(){
+        assertDoesNotThrow(()-> myHotel.book(50));
+    }
 }
