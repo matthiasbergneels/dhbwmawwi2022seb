@@ -1,0 +1,17 @@
+Im zweiten Try catch block müssen die beiden catches vertauscht werden, sodass der
+codeabschnitt wie folgt aussieht:
+
+try
+{
+    bmw.fahren();
+}
+catch(TankLeer e)
+{
+    System.out.println(e.getMessage());
+    System.out.println(e.toString());
+    e.printStackTrace();
+}
+catch(Exception e)
+{
+    e.printStackTrace();
+}

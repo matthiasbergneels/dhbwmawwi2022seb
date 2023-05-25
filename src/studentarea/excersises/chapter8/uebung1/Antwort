@@ -1,0 +1,4 @@
+Der Grund wieso das Programm in dieser Form nicht ausgeführt werden kann ist weil ein
+ IOException throw zu beginn der Main Methode fehlt.
+Das Problem lässt sich lösen, indem man
+"throws IOException" an die Main Methode anhängt.
