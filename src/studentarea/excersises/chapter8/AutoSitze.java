@@ -6,7 +6,7 @@ public class AutoSitze {
 
     //public AutoSitze(boolean bezug, String color) throws FalscheParameter {
     public AutoSitze(boolean bezug, Farbe color) throws FalscheParameter {
-        if(bezug && !(color == Farbe.Schwarz || color == Farbe.Weiß))
+        if(bezug && !(color == Farbe.SCHWARZ || color == Farbe.WEISS))
             throw new FalscheParameter(bezug, color);
 
         this.ledersitze = bezug;
