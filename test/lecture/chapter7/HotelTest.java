@@ -42,7 +42,7 @@ class HotelTest {
     @Test
     void bookThrowsExceptionExternalClass() {
 
-        NotEnoughFreeSlotsException myException = assertThrows(NotEnoughFreeSlotsException.class, new HotelBookExecutor((Hotel)myHotel));
+        NotEnoughFreeSlotsException myException = assertThrows(NotEnoughFreeSlotsException.class, new HotelBookExecutor((Hotel)myHotel, 120));
 
         assertEquals(100, myException.getFreeSlots());
 
@@ -61,5 +61,10 @@ class HotelTest {
     @Test
     void bookDoesNotThrowsExceptionWithLambdaFunction(){
         assertDoesNotThrow(()-> myHotel.book(50));
+    }
+    
+    @Test
+    void bookDoesNotThrowsExceptionExternalClass(){
+        assertDoesNotThrow(new HotelBookExecutor((Hotel)myHotel, 50));
     }
 }
