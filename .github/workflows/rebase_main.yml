@@ -22,5 +22,5 @@ jobs:
     - uses: tiacsys/git-rebase@v1.0.1 # https://github.com/marketplace/actions/git-rebase-action
       with:
         repo: "matthiasbergneels/dhbwmawwi2022seb"
-        source_branch: ${{ matrix.studentbranch }}
-        destination_branch: "main"
+        source_branch: main
+        destination_branch: ${{ matrix.studentbranch }} 
