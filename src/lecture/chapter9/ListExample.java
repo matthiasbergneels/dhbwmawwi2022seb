@@ -15,7 +15,7 @@ public class ListExample {
         nameList.add("Nina");       // Index 1
         nameList.add("Gabi");       // Index 2
         nameList.add("Emir");       // Index 3
-        nameList.set(2, "Franz");   // neuer Index 2 --> inhalt wird überschrieben
+        nameList.set(2, "Franz");   // neuer Index 2 --> Inhalt wird überschrieben
         //nameList.add(new Student(1233));
         //nameList.add(new ArrayList());
         nameList.add("Nina");       // Index 4
@@ -35,14 +35,14 @@ public class ListExample {
 
         System.out.println("For-Each-Schleife:");
         for(String currentName : nameList){
-            /* --> ConcurrentModificationException
+            /*
             if(currentName.equals("Adam")){
-                nameList.add("Eva");
+                nameList.add("Eva");        --> ConcurrentModificationException
             }
              */
-            /* --> ConcurrentModificationException
+            /*
             if(currentName.equals("Adam")){
-                nameList.remove("Adam");
+                nameList.remove("Adam");    --> ConcurrentModificationException
             }
              */
             System.out.println(currentName);
