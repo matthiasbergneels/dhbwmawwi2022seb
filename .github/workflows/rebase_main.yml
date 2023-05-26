@@ -29,7 +29,9 @@ jobs:
           git fetch
           git checkout main
           git pull
+          cat .gitignore
           git checkout ${{ matrix.studentbranch }}
           git pull
+          cat .gitignore
           git rebase main
           git push
