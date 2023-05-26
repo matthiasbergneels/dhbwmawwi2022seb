@@ -27,6 +27,9 @@ jobs:
     - name: Rebase main to student branches
       run: |
           git fetch
+          git checkout main
+          git pull
           git checkout ${{ matrix.studentbranch }}
+          git pull
           git rebase main
           git push
