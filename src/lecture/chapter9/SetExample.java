@@ -20,13 +20,9 @@ public class SetExample {
         nameSet.add("Zeus");
 
         System.out.println("Größe der Menge: " + nameSet.size());
-
         System.out.println("Doppelte Gabi : " + nameSet.add("Gabi"));
-
         System.out.println("Größe der Menge: " + nameSet.size());
-
         nameSet.remove("Gabi");
-
         System.out.println("Größe der Menge: " + nameSet.size());
 
         System.out.println("For-Each:");
