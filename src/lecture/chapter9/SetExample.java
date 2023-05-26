@@ -1,5 +1,7 @@
 package lecture.chapter9;
 
+import com.sun.source.tree.Tree;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -48,5 +50,19 @@ public class SetExample {
 
         System.out.println("Größe der Menge: " + nameSet.size());
 
+
+
+
+        // Persons
+
+        Set<Person> personSet = new TreeSet<>();
+
+        personSet.add(new Person("Klaus", "Zeus", 35));
+        personSet.add(new Person("Gabi", "Mueller", 33));
+        personSet.add(new Person("Nina", "Rexi", 39));
+
+        for(Person currentPerson : personSet){
+            System.out.println(currentPerson);
+        }
     }
 }
