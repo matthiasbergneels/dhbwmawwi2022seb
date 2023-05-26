@@ -1,6 +1,6 @@
 package lecture.chapter9;
 
-public class Person {
+public class Person implements Comparable<Person>{
     private String name;
     private String familyName;
     private int age;
@@ -33,5 +33,19 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", familyName='" + familyName + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return 0;
     }
 }
