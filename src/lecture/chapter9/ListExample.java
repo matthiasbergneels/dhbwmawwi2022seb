@@ -11,15 +11,15 @@ public class ListExample {
 
         List<String> nameList = new ArrayList<>();
 
-        nameList.add("Klaus");      // 0
-        nameList.add("Nina");       // 1
-        nameList.add("Gabi");       // 2
-        nameList.add("Emir");       // 3
-        nameList.set(2, "Franz");   // 2
+        nameList.add("Klaus");      // Index 0
+        nameList.add("Nina");       // Index 1
+        nameList.add("Gabi");       // Index 2
+        nameList.add("Emir");       // Index 3
+        nameList.set(2, "Franz");   // neuer Index 2 --> inhalt wird überschrieben
         //nameList.add(new Student(1233));
         //nameList.add(new ArrayList());
-        nameList.add("Nina");
-        nameList.add(0, "Adam");
+        nameList.add("Nina");       // Index 4
+        nameList.add(0, "Adam");    // neuer Index 0 -> alle anderen werden eins geschoben
 
         System.out.println(nameList.get(0));
         System.out.println(nameList.get(2));
