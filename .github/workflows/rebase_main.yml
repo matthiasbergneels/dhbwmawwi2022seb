@@ -6,11 +6,11 @@ on:
     branches: [ main ]
     paths:
     - 'src/lecture/**'
-    - 'src/excersises/**' # spelling mistake - exercises
+    - 'src/exercises/**'
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    
+
 jobs:
   rebase-main-to-studentbranches:
     timeout-minutes: 2
