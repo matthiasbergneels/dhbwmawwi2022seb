@@ -1,9 +1,8 @@
 root = true
 
 [*]
-end_if_line = lf
+end_of_line = lf
 charset = utf-8
-
 
 [*.java]
 indent_style = space
