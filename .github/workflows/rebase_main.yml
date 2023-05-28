@@ -26,6 +26,6 @@ jobs:
           git config --local user.name "Github Actions"
     - uses: tiacsys/git-rebase@v1.0.1 # https://github.com/marketplace/actions/git-rebase-action
       with:
-        repo: "matthiasbergneels/dhbwmawwi2022seb"
+        repo: "https://matthiasbergneels:${{ secrets.GITHUB_TOKEN }}@github.com/matthiasbergneels/dhbwmawwi2022seb.git"
         source_branch: main
         destination_branch: ${{ matrix.studentbranch }} 
