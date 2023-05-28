@@ -28,6 +28,7 @@ jobs:
           git --no-pager branch -a -vv
           git rebase --onto main main ${{ matrix.studentbranch }}
           git checkout ${{ matrix.studentbranch }}
+          git pull
           git status
     - name: GitHub Push changes to student branch
       uses: ad-m/github-push-action@v0.6.0
