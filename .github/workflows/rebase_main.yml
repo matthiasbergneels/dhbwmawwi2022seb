@@ -24,6 +24,7 @@ jobs:
           git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/matthiasbergneels/dhbwmawwi2022seb.git --origin origin && cd dhbwmawwi2022seb
           git config --local user.email "actions@github.com"
           git config --local user.name "Github Actions"
+          git config pull.ff only
           git fetch origin '+refs/heads/*:refs/heads/*' --update-head-ok
           git --no-pager branch -a -vv
           git rebase --onto main main ${{ matrix.studentbranch }}
