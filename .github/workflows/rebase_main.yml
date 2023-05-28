@@ -10,24 +10,34 @@ on:
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    
+
 jobs:
   rebase-main-to-studentbranches:
     timeout-minutes: 2
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        studentbranch: [ 's21' ]
+        studentbranch: [ 's01', 's02', 's03', 's21' ]
     steps:
-    - uses: actions/checkout@v2
-    - name: Set Git config
-      run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "Github Actions"
     - name: Rebase main to student branches
       run: |
-          git fetch
+          git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/matthiasbergneels/dhbwmawwi2022seb.git --origin origin && cd dhbwmawwi2022seb
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Github Actions"
+          git config pull.rebase true
+          git fetch origin '+refs/heads/*:refs/heads/*' --update-head-ok
+          git --no-pager branch -a -vv
+          git rebase --onto main main ${{ matrix.studentbranch }}
           git checkout ${{ matrix.studentbranch }}
-          git pull
-          git rebase main
-          git push
+          git add .
+          git commit -m "git actions: automatic rebase commit"
+          git pull origin ${{ matrix.studentbranch }}
+          git status
+    - name: GitHub Push changes to student branch
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        directory: 'dhbwmawwi2022seb'
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ matrix.studentbranch }}
+          
+          
