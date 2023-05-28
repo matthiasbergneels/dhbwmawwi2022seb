@@ -29,5 +29,6 @@ jobs:
           git rebase --onto main main ${{ matrix.studentbranch }}
           git checkout ${{ matrix.studentbranch }}
           git status
+          git push remote-repo HEAD:${{ matrix.studentbranch }} -f
           
           
