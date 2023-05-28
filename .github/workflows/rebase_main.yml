@@ -19,16 +19,21 @@ jobs:
       matrix:
         studentbranch: [ 's21' ]
     steps:
+    - name: checkout main
+      uses: actions/checkout@v2
     - name: Rebase main to student branches
       run: |
-          git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/matthiasbergneels/dhbwmawwi2022seb.git --origin remote-repo && cd dhbwmawwi2022seb
           git config --local user.email "actions@github.com"
           git config --local user.name "Github Actions"
-          git fetch remote-repo '+refs/heads/*:refs/heads/*' --update-head-ok
+          git fetch '+refs/heads/*:refs/heads/*' --update-head-ok
           git --no-pager branch -a -vv
           git rebase --onto main main ${{ matrix.studentbranch }}
           git checkout ${{ matrix.studentbranch }}
           git status
-          git push remote-repo HEAD:${{ matrix.studentbranch }} -f
+    - name: GitHub Push changes to student branch
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ matrix.studentbranch }}
           
           
