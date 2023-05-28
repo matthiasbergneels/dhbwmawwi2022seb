@@ -53,7 +53,7 @@ public class SetExample {
 
         Set<Person> personSet = new TreeSet<>();
 
-        Person myPerson = new Person("Katrin", "Gorilla", 33)
+        Person myPerson = new Person("Katrin", "Gorilla", 33);
 
         personSet.add(new Person("Klaus", "Zeus", 35));
         personSet.add(new Person("Gabi", "Mueller", 33));
