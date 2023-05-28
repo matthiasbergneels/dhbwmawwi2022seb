@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        studentbranch: [ 's21' ]
+        studentbranch: [ 's01', 's02', 's03', 's21' ]
     steps:
     - name: Rebase main to student branches
       run: |
