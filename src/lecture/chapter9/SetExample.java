@@ -53,9 +53,13 @@ public class SetExample {
 
         Set<Person> personSet = new TreeSet<>();
 
+        Person myPerson = new Person("Katrin", "Gorilla", 33)
+
         personSet.add(new Person("Klaus", "Zeus", 35));
         personSet.add(new Person("Gabi", "Mueller", 33));
         personSet.add(new Person("Nina", "Rexi", 39));
+        personSet.add(myPerson);
+      personSet.add(new Person("Michael", "Mayer", 22));
 
         for(Person currentPerson : personSet){
             System.out.println(currentPerson);
