@@ -29,6 +29,8 @@ jobs:
           git --no-pager branch -a -vv
           git rebase --onto main main ${{ matrix.studentbranch }}
           git checkout ${{ matrix.studentbranch }}
+          git add .
+          git commit -m "git actions: automatic rebase commit"
           git pull origin ${{ matrix.studentbranch }}
           git status
     - name: GitHub Push changes to student branch
