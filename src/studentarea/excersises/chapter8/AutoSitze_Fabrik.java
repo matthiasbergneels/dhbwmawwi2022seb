@@ -1,4 +1,4 @@
-package Autositz;
+package studentarea.excersises.chapter8;
 
 public class AutoSitze_Fabrik {
     public static void main(String[] args){
