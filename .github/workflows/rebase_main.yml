@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        studentbranch: [ 's01', 's02', 's03', 's21' ]
+        studentbranch: [ 's01', 's02', 's03', 's04', 's05', 's06', 's07', 's08', 's09', 's10', 's11', 's12', 's13', 's14', 's15', 's16', 's17', 's18', 's19', 's20', 's21' ]
     steps:
       - name: Rebase main to student branches
         uses: tiacsys/git-rebase@v1.0.1
