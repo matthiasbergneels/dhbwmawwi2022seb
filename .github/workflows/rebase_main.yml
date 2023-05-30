@@ -22,7 +22,7 @@ jobs:
       - name: Rebase main to student branches
         uses: tiacsys/git-rebase@v1.0.1
         with:
-          repo: "Akito3110/actions-test"
+          repo: "matthiasbergneels/dhbwmawwi2022seb"
           source_branch: ${{ matrix.studentbranch }}
           destination_branch: "main"
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
