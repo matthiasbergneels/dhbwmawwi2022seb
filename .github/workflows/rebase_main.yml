@@ -25,4 +25,4 @@ jobs:
           repo: "Akito3110/actions-test"
           source_branch: ${{ matrix.studentbranch }}
           destination_branch: "main"
-          ssh_private_key: ${{ secrets.GITHUB_TOKEN }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
