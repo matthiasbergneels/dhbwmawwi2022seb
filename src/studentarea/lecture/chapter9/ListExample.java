@@ -1,9 +1,6 @@
 package studentarea.lecture.chapter9;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ListExample {
     public static void main(String[] args) {
@@ -20,7 +17,6 @@ public class ListExample {
         for (String name: TypListe) {
             System.out.println(name);
         }
-
         System.out.println(TypListe.contains("Hans"));
     }
 }
