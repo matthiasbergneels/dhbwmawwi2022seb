@@ -11,16 +11,34 @@ public class TestKunde {
         Kunde kunde5 = new Kunde("Dummy", "Jimmy", 1111);
 
 
-        Set<Kunde> kundenListe = new TreeSet<>();
-        kundenListe.add(kunde1);
-        kundenListe.add(kunde2);
-        kundenListe.add(kunde3);
-        kundenListe.add(kunde4);
-        kundenListe.add(kunde5);
+        Set<Kunde> kundenMenge = new TreeSet<>();
+        kundenMenge.add(kunde1);
+        kundenMenge.add(kunde2);
+        kundenMenge.add(kunde3);
+        kundenMenge.add(kunde4);
+        kundenMenge.add(kunde5);
+
+        Iterator i = kundenMenge.iterator();
+
+      System.out.println(kundenMenge.size());
+
+      System.out.println("Kunden nach der Kundennummer sortiert: \n");
+      while(i.hasNext()){
+        System.out.println(i.next());
+      }
 
 
+      System.out.println("\n==============================================================");
 
+      List<Kunde> kundenListe = new ArrayList<Kunde>(kundenMenge);
 
+      kundenListe.sort(new KundenNachNamenSortieren());
+
+      System.out.println("Kunden nach dem Nachnamen sortiert: \n");
+
+      for (Kunde kunde: kundenListe) {
+        System.out.println(kunde);
+      }
     }
 
 
