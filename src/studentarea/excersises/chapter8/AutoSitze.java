@@ -1,5 +1,4 @@
-package Autositz;
-
+package studentarea.excersises.chapter8;
 
 public class AutoSitze {
     private boolean ledersitze;

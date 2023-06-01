@@ -1,4 +1,4 @@
-package Autositz;
+package studentarea.excersises.chapter8;
 
 public class TestAutoSitzeException extends Exception{
   public TestAutoSitzeException(boolean bezug, ErlaubteFarben farbe){

@@ -1,5 +1,7 @@
 package lecture.chapter9;
 
+import com.sun.source.tree.Tree;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -18,13 +20,9 @@ public class SetExample {
         nameSet.add("Zeus");
 
         System.out.println("Größe der Menge: " + nameSet.size());
-
         System.out.println("Doppelte Gabi : " + nameSet.add("Gabi"));
-
         System.out.println("Größe der Menge: " + nameSet.size());
-
         nameSet.remove("Gabi");
-
         System.out.println("Größe der Menge: " + nameSet.size());
 
         System.out.println("For-Each:");
@@ -48,5 +46,23 @@ public class SetExample {
 
         System.out.println("Größe der Menge: " + nameSet.size());
 
+
+
+
+        // Persons
+
+        Set<Person> personSet = new TreeSet<>();
+
+        Person myPerson = new Person("Katrin", "Gorilla", 33);
+
+        personSet.add(new Person("Klaus", "Zeus", 35));
+        personSet.add(new Person("Gabi", "Mueller", 33));
+        personSet.add(new Person("Nina", "Rexi", 39));
+        personSet.add(myPerson);
+        personSet.add(new Person("Michael", "Mayer", 22));
+
+        for(Person currentPerson : personSet){
+            System.out.println(currentPerson);
+        }
     }
 }

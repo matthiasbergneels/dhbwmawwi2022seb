@@ -1,4 +1,4 @@
-package Autositz;
+package studentarea.excersises.chapter8;
 
 public enum ErlaubteFarben {
     //Welche Farbe soll dein Autositz haben? Füge es hier hinzu
