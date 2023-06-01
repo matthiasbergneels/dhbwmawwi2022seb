@@ -60,6 +60,7 @@ public class SetExample {
         personSet.add(new Person("Nina", "Rexi", 39));
         personSet.add(myPerson);
         personSet.add(new Person("Michael", "Mayer", 22));
+        personSet.add(myPerson);
 
         for(Person currentPerson : personSet){
             System.out.println(currentPerson);
