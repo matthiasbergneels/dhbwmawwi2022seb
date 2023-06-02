@@ -1,11 +1,31 @@
 package lecture.chapter9;
 
+import java.util.Comparator;
+
 public class Person implements Comparable<Person>{
     private String name;
     private String familyName;
     private int age;
 
-    public Person(String name, String familyName, int age) {
+    public static Comparator<Person> sortByFamilyName = (Person p1, Person p2)->{
+      return p1.familyName.toLowerCase().compareTo(p2.familyName.toLowerCase());
+    };
+
+  public static Comparator<Person> sortByName = (p1, p2)-> {
+   return p1.name.toLowerCase().compareTo(p2.name.toLowerCase());
+  };
+
+  public static Comparator<Person> sortByAge = (Person p1, Person p2)->{
+    return p1.age - p2.age;
+  };
+
+  public static class SortByName implements Comparator<Person>{
+    public int compare(Person p1, Person p2){
+      return p1.name.toLowerCase().compareTo(p2.name.toLowerCase());
+    }
+  }
+
+  public Person(String name, String familyName, int age) {
         this.name = name;
         this.familyName = familyName;
         this.age = age;
@@ -46,6 +66,18 @@ public class Person implements Comparable<Person>{
 
     @Override
     public int compareTo(Person o) {
-        return 0;
+      if(!this.familyName.equalsIgnoreCase(o.getFamilyName())){
+        return this.familyName.toLowerCase().compareTo(o.getFamilyName().toLowerCase());
+      }
+
+      if(!this.name.equalsIgnoreCase(o.getName())){
+        return this.name.toLowerCase().compareTo(o.getName().toLowerCase());
+      }
+
+      if(this.age != o.getAge()){
+        return this.age - o.getAge();
+      }
+
+      return 0;
     }
 }
