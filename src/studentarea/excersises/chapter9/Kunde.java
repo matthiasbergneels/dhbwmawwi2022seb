@@ -1,6 +1,10 @@
 package studentarea.excersises.chapter9;
 
+import java.util.Comparator;
+
 public class Kunde implements Comparable<Kunde> {
+
+  public static Comparator<Kunde> sortByFamilyname = Comparator.comparing((Kunde p) -> p.getName().toLowerCase()).thenComparing(p -> p.getVorname().toLowerCase());
 
   private String name, vorname;
   private int kundenNummer;
@@ -36,6 +40,31 @@ public class Kunde implements Comparable<Kunde> {
 
   public void setKundenNummer(int kundenNummer) {
     this.kundenNummer = kundenNummer;
+  }
+
+  @Override
+  public boolean equals(Object object) {
+    if (this == object) {
+      return true;
+    }
+
+    if (object == null) {
+      return false;
+    }
+
+    if (object.getClass() != this.getClass()) {
+      return false;
+    }
+
+    if (((Kunde) object).getKundenNummer() != this.getKundenNummer()) {
+      return false;
+    }
+
+    if (((Kunde) object).getName() != this.getName()) {
+      return false;
+    }
+
+    return ((Kunde) object).getVorname() == this.getVorname();
   }
 
   @Override
