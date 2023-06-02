@@ -65,27 +65,6 @@ public class Kunde implements Comparable<Kunde> {
 
     }
 
-    //equals Methode überschreiben (aus Vorlesung 16.06.)
-  @Override
-  public boolean equals(Object o){
-    if (this == o) return true;
-    if (o == null) return false;
-
-    //Get Class wegen Vererbung => Betrachtung wirklich nur als Kunde unabhängig von der Referenz
-    if (o.getClass() == this.getClass()){
-      Kunde kunde = (Kunde) o;
-      //Alternativd ie Attribute mit sich selbst vergleichen
-      if (this.compareTo(kunde) == 0) {
-        return true;
-      }
-    }
-
-
-    return false;
-
-
-  }
-
 
 
 }
