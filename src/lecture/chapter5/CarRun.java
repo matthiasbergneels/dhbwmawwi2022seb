@@ -50,6 +50,7 @@ public class CarRun {
         myCar.accelerate(5000);
         myCar.brake();
 
+
         System.out.println("Aktuelle Geschwindigkeit von meinem Auto: " + myCar.getCurrentSpeedInKmh() + " km/h");
         System.out.println("Aktuelle Geschwindigkeit von deinem Auto: " + yourCar.getCurrentSpeedInKmh() + " km/h");
 
@@ -67,6 +68,7 @@ public class CarRun {
             System.out.println(currentBrand);
         }
 
+        myCar.finalize();
         myCar = null;
         schnurziPupsCar = null;
 
