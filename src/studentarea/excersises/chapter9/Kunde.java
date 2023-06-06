@@ -1,6 +1,51 @@
 package studentarea.excersises.chapter9;
 
-public class Kunde {
+public class Kunde implements Comparable<Kunde> {
+  private String name;
+  private String vorname;
+  private int kundenNummer;
 
-    // TODO: Implementieren :-)
+  public Kunde(String name, String vorname, int nummer) {
+    this.name = name;
+    this.vorname = vorname;
+    this.kundenNummer = nummer;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setVorname(String vorname) {
+    this.vorname = vorname;
+  }
+
+  public String getVorname() {
+    return vorname;
+  }
+
+  public void setKundenNummer(int nummer) {
+    this.kundenNummer = nummer;
+  }
+
+  public int getKundenNummer() {
+    return kundenNummer;
+  }
+
+  @Override
+  public int compareTo(Kunde other) {
+    return Integer.compare(this.kundenNummer, other.kundenNummer);
+  }
+
+  @Override
+  public String toString() {
+    return "Kunde{" +
+      "name='" + name + '\'' +
+      ", vorname='" + vorname + '\'' +
+      ", kundenNummer=" + kundenNummer +
+      '}';
+  }
 }
