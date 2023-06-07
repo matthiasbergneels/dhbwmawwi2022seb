@@ -1,6 +1,5 @@
 package studentarea.excersises.chapter9;
 
-<<<<<<< HEAD
 import java.util.Comparator;
 
 public class Kunde implements Comparable<Kunde> {
