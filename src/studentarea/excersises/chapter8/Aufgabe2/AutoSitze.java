@@ -1,4 +1,4 @@
-package studentarea.excersises.chapter8;
+package studentarea.excersises.chapter8.Aufgabe2;
 
 public class AutoSitze {
   private final boolean isbezug;
