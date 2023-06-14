@@ -22,7 +22,7 @@ public class TestKunde {
     Iterator i = kundenSet.iterator();
     while(i.hasNext()){
       Kunde k = (Kunde) i.next();
-      System.out.println(k.getKundenNummer() + ": " +k.getVorname() + " " + k.getName());
+      System.out.println(k.toString());
     }
 
 
