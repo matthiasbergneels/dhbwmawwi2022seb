@@ -10,16 +10,14 @@ import java.io.FileWriter;
 
 public class Uebung1 {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         FileWriter datei;
         String text;
 
         datei = new FileWriter("ausgabe.txt");
         text = "1\n";
 
-        for(int i = 2; i <=100; i++)
-        {
+        for(int i = 2; i <=100; i++) {
             text += i;
             text += "\n";
         }
