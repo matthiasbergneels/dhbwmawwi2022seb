@@ -1,6 +1,6 @@
 package studentarea.excersises.chapter9;
 
-public class Kunde {
+public class Kunde implements Comparable<Kunde> {
 
     // TODO: Implementieren :-)
 
@@ -36,10 +36,8 @@ public class Kunde {
   }
 
 
-
-
-
-
-
-
+  @Override
+  public int compareTo(Kunde kunde) {
+    return 0;
+  }
 }
