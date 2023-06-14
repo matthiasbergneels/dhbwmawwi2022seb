@@ -38,6 +38,6 @@ public class Kunde implements Comparable<Kunde> {
 
   @Override
   public int compareTo(Kunde kunde) {
-    return 0;
+    return this.kundenNummer - (kunde.getKundenNummer());
   }
 }
