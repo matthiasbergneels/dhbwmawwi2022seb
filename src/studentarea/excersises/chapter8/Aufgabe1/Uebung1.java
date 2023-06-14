@@ -1,4 +1,4 @@
-package studentarea.excersises.chapter8;
+package studentarea.excersises.chapter8.Aufgabe1;
 
 import java.io.FileWriter;
 import java.io.IOException;
