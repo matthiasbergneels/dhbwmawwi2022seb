@@ -35,6 +35,14 @@ public class Kunde implements Comparable<Kunde> {
     return kundenNummer;
   }
 
+  @Override
+  public String toString() {
+    return "Kunde{" +
+      "name='" + name + '\'' +
+      ", vorname='" + vorname + '\'' +
+      ", kundenNummer=" + kundenNummer +
+      '}';
+  }
 
   @Override
   public int compareTo(Kunde kunde) {
