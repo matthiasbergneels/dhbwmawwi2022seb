@@ -1,4 +1,4 @@
-package studentarea.excersises.chapter8;
+package studentarea.excersises.chapter8.Aufgabe2;
 
 public class FalscherParameterException extends Exception {
   public FalscherParameterException(boolean isbezug, String color) {

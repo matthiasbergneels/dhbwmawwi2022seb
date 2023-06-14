@@ -1,4 +1,4 @@
-package studentarea.excersises.chapter9;
+package studentarea.excersises.chapter9.Aufgabe1;
 
 public class Kunde implements Comparable<Kunde> {
 
