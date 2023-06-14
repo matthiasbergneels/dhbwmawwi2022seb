@@ -1,6 +1,7 @@
 package studentarea.excersises.chapter9;
 
 
+import java.util.Iterator;
 import java.util.TreeSet;
 
 public class TestKunde {
@@ -17,6 +18,12 @@ public class TestKunde {
     kundenSet.add(kunde3);
     kundenSet.add(kunde4);
     kundenSet.add(kunde5);
+
+    Iterator i = kundenSet.iterator();
+    while(i.hasNext()){
+      Kunde k = (Kunde) i.next();
+      System.out.println(k.getKundenNummer() + ": " +k.getVorname() + " " + k.getName());
+    }
 
 
   }
