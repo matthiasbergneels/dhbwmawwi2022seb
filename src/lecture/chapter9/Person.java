@@ -121,6 +121,16 @@ public class Person implements Comparable<Person> {
     */
   }
 
+  public int hashCode(){
+    int hc = 17;
+
+    hc = hc ^ 59 * age;
+    hc = hc ^ 97 * ((this.name == null) ? 0 : this.name.hashCode());
+    hc = hc ^ 56 * ((this.familyName == null) ? 0 : this.familyName.hashCode());
+
+    return hc;
+  }
+
 
   /*
   @Override
