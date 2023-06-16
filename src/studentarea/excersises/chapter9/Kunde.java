@@ -65,6 +65,26 @@ public class Kunde implements Comparable<Kunde> {
 
     }
 
+    //equals Methode überschreiben (aus Vorlesung 16.06.)
+  @Override
+  public boolean equals(Object o){
+    if (this == o) return true;
+    if (o == null) return false;
+
+    if (o instanceof Kunde){
+      Kunde kunde = (Kunde) o;
+      //Alternativ die Attribute mit sich selbst vergleichen
+      if (this.compareTo(kunde) == 0) {
+        return true;
+      }
+    }
+
+
+    return false;
+
+
+  }
+
 
 
 }
