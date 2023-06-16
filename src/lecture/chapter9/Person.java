@@ -1,51 +1,147 @@
 package lecture.chapter9;
 
-public class Person implements Comparable<Person>{
-    private String name;
-    private String familyName;
-    private int age;
+import java.util.Comparator;
+import java.util.Objects;
 
-    public Person(String name, String familyName, int age) {
-        this.name = name;
-        this.familyName = familyName;
-        this.age = age;
+public class Person implements Comparable<Person> {
+  private String name;
+  private String familyName;
+  private int age;
+
+  public static Comparator<Person> sortByFamilyName = (Person p1, Person p2) -> {
+    return p1.familyName.toLowerCase().compareTo(p2.familyName.toLowerCase());
+  };
+
+  public static Comparator<Person> sortByName = (p1, p2) -> {
+    return p1.name.toLowerCase().compareTo(p2.name.toLowerCase());
+  };
+
+  public static Comparator<Person> sortByAge = (Person p1, Person p2) -> {
+    return p1.age - p2.age;
+  };
+
+  public static class SortByName implements Comparator<Person> {
+    public int compare(Person p1, Person p2) {
+      return p1.name.toLowerCase().compareTo(p2.name.toLowerCase());
+    }
+  }
+
+  public Person(String name, String familyName, int age) {
+    this.name = name;
+    this.familyName = familyName;
+    this.age = age;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getFamilyName() {
+    return familyName;
+  }
+
+  public void setFamilyName(String familyName) {
+    this.familyName = familyName;
+  }
+
+  public int getAge() {
+    return age;
+  }
+
+  public void setAge(int age) {
+    this.age = age;
+  }
+
+  @Override
+  public String toString() {
+    return "Person{" +
+      "name='" + name + '\'' +
+      ", familyName='" + familyName + '\'' +
+      ", age=" + age +
+      '}';
+  }
+
+  @Override
+  public int compareTo(Person o) {
+    if (!this.familyName.equalsIgnoreCase(o.getFamilyName())) {
+      return this.familyName.toLowerCase().compareTo(o.getFamilyName().toLowerCase());
     }
 
-    public String getName() {
-        return name;
+    if (!this.name.equalsIgnoreCase(o.getName())) {
+      return this.name.toLowerCase().compareTo(o.getName().toLowerCase());
     }
 
-    public void setName(String name) {
-        this.name = name;
+    if (this.age != o.getAge()) {
+      return this.age - o.getAge();
     }
 
-    public String getFamilyName() {
-        return familyName;
+    return 0;
+  }
+
+  public boolean equals(Object o){
+    // Alias Check
+    if(this == o){
+      return true;
     }
 
-    public void setFamilyName(String familyName) {
-        this.familyName = familyName;
+    // Null Check
+    if(o == null){
+      return false;
     }
 
-    public int getAge() {
-        return age;
+    // Type Check
+    if(this.getClass() != o.getClass()){
+      return false;
+    }
+    Person person = (Person)o;
+
+    // Attribute checks
+    if(!this.name.equals(person.name)){
+      return false;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    if(!this.familyName.equals(person.familyName)){
+      return false;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", familyName='" + familyName + '\'' +
-                ", age=" + age +
-                '}';
+    if(this.age != person.age){
+      return false;
     }
 
-    @Override
-    public int compareTo(Person o) {
-        return 0;
-    }
+    return true;
+
+    /*
+    // Attribute Check
+
+    return this.compareTo(person) == 0;
+    */
+  }
+
+
+  /*
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Person person = (Person) o;
+
+    if (age != person.age) return false;
+    if (!Objects.equals(name, person.name)) return false;
+    return Objects.equals(familyName, person.familyName);
+  }
+
+  @Override
+  public int hashCode() {
+    int result = name != null ? name.hashCode() : 0;
+    result = 31 * result + (familyName != null ? familyName.hashCode() : 0);
+    result = 31 * result + age;
+    return result;
+  }
+
+   */
 }
