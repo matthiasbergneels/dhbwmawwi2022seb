@@ -1,4 +1,4 @@
-package lecture.chapter9;
+package studentarea.lecture.chapter9;
 
 import java.util.Comparator;
 
@@ -81,7 +81,10 @@ public class Person implements Comparable<Person> {
     return 0;
   }
 
+  @Override
   public boolean equals(Object o){
-    return false;
+    if (o == null || getClass() != o.getClass())return false;
+    Person person = (Person) o;
+    return this.age==person.age && this.name.equalsIgnoreCase(person.name) && this.familyName.equalsIgnoreCase(person.familyName);
   }
 }
