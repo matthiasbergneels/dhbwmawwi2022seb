@@ -49,12 +49,8 @@ public class Kunde implements Comparable<Kunde>{
     }
     @Override
     public boolean equals(Object o){
-        if (o == null)return false;
-        if (o.getClass() != this.getClass()) return false;
-        if (!this.name.equalsIgnoreCase(((Kunde) o).name)) return false;
-        if (!this.vorname.equalsIgnoreCase(((Kunde) o).vorname)) return false;
-        if (this.kundennummer != ((Kunde) o).kundennummer) return false;
-        return true;
-        //so würde ich das in die Production schicken
+        if (o == null || o.getClass() != getClass())return false;
+        Kunde kunde = (Kunde) o;
+        return (this.vorname.equalsIgnoreCase(kunde.vorname)) && (this.name.equalsIgnoreCase(kunde.name)) && (this.kundennummer==kunde.kundennummer);
     }
 }
