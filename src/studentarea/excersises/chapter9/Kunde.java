@@ -12,7 +12,7 @@ public class Kunde implements Comparable<Kunde>{
             return k1.vorname.toUpperCase().compareTo(k2.vorname.toUpperCase());
         }
         return 0;
-    };
+    };// Das ist cool, weil man auf die lambda-funk zugreifen kann ohne getter, weil in der Klasse selbst
     public Kunde(String name, String vorname, int kundennummer) {
         this.name = name;
         this.vorname = vorname;
@@ -49,6 +49,7 @@ public class Kunde implements Comparable<Kunde>{
     }
     @Override
     public boolean equals(Object o){
+        if (o == null)return false;
         if (o.getClass() != this.getClass()) return false;
         if (!this.name.equalsIgnoreCase(((Kunde) o).name)) return false;
         if (!this.vorname.equalsIgnoreCase(((Kunde) o).vorname)) return false;

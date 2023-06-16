@@ -28,7 +28,7 @@ public class TestKunde {
         }
 
 
-        List<Kunde> KundenVektor = new ArrayList<>(KundenSet);
+        List<Kunde> KundenVektor = new Vector<>(KundenSet);
         KundenVektor.sort(Kunde.compareName);
 
         //Vektor Ausgabe
@@ -41,6 +41,7 @@ public class TestKunde {
 
         //equals-Methode
         System.out.println(K1.equals(new Object()));
+        System.out.println(K1.equals(null));
         System.out.println(K1.equals(K2));
         System.out.println(K1.equals(K11));
     }
