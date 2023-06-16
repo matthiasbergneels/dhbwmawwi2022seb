@@ -80,4 +80,8 @@ public class Person implements Comparable<Person> {
 
     return 0;
   }
+
+  public boolean equals(Object o){
+    return false;
+  }
 }
