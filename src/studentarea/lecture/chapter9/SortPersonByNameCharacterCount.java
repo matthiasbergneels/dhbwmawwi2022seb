@@ -1,4 +1,4 @@
-package lecture.chapter9;
+package studentarea.lecture.chapter9;
 
 import java.util.Comparator;
 

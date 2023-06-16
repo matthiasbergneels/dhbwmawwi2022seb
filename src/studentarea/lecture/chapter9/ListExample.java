@@ -1,9 +1,8 @@
-package lecture.chapter9;
+package studentarea.lecture.chapter9;
 
-import lecture.chapter5.Car;
-import lecture.chapter5.Student;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class ListExample {
 

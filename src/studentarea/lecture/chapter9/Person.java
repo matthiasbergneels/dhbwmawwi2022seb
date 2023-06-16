@@ -1,4 +1,4 @@
-package lecture.chapter9;
+package studentarea.lecture.chapter9;
 
 import java.util.Comparator;
 
@@ -82,6 +82,11 @@ public class Person implements Comparable<Person> {
   }
 
   public boolean equals(Object o){
+    if(this.name.equals(((Person)o).name)
+      && this.familyName.equals(((Person) o).familyName)
+      && this.age == ((Person) o).age){
+      return true;
+    }
     return false;
   }
 }
