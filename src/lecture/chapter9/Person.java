@@ -1,6 +1,7 @@
 package lecture.chapter9;
 
 import java.util.Comparator;
+import java.util.Objects;
 
 public class Person implements Comparable<Person> {
   private String name;
@@ -82,6 +83,65 @@ public class Person implements Comparable<Person> {
   }
 
   public boolean equals(Object o){
-    return false;
+    // Alias Check
+    if(this == o){
+      return true;
+    }
+
+    // Null Check
+    if(o == null){
+      return false;
+    }
+
+    // Type Check
+    if(this.getClass() != o.getClass()){
+      return false;
+    }
+    Person person = (Person)o;
+
+    // Attribute checks
+    if(!this.name.equals(person.name)){
+      return false;
+    }
+
+    if(!this.familyName.equals(person.familyName)){
+      return false;
+    }
+
+    if(this.age != person.age){
+      return false;
+    }
+
+    return true;
+
+    /*
+    // Attribute Check
+
+    return this.compareTo(person) == 0;
+    */
   }
+
+
+  /*
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Person person = (Person) o;
+
+    if (age != person.age) return false;
+    if (!Objects.equals(name, person.name)) return false;
+    return Objects.equals(familyName, person.familyName);
+  }
+
+  @Override
+  public int hashCode() {
+    int result = name != null ? name.hashCode() : 0;
+    result = 31 * result + (familyName != null ? familyName.hashCode() : 0);
+    result = 31 * result + age;
+    return result;
+  }
+
+   */
 }
