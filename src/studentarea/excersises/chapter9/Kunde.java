@@ -74,7 +74,7 @@ public class Kunde implements Comparable<Kunde> {
     //Get Class wegen Vererbung => Betrachtung wirklich nur als Kunde unabhängig von der Referenz
     if (o.getClass() == this.getClass()){
       Kunde kunde = (Kunde) o;
-      //Alternativ die Attribute mit sich selbst vergleichen
+      //Alternativd ie Attribute mit sich selbst vergleichen
       if (this.compareTo(kunde) == 0) {
         return true;
       }
