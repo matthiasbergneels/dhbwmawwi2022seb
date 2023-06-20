@@ -36,63 +36,83 @@ public class Logon {
 
     // Verbindung
     JPanel verbindung = new JPanel(new GridLayout(5, 2));
-  //  verbindung.add(new JLabel("Verbindung"));
 
- //   logon.add(verbindung);
+
+
     mainPanel.add(verbindung);
 
     // User:
     JPanel user = new JPanel(new FlowLayout(FlowLayout.LEFT));
     user.add(new JLabel("User: "));
-    user.add(new JTextField(4));
     verbindung.add(user);
+    JPanel tfUser = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    tfUser.add(new JTextField(3));
+    verbindung.add(tfUser);
 
 
     // Passwort:
     JPanel passwort = new JPanel(new FlowLayout(FlowLayout.LEFT));
     passwort.add(new JLabel("Passwort: "));
-    passwort.add(new JPasswordField(5));
     verbindung.add(passwort);
+
+    JPanel tfPasswort = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    tfPasswort.add(new JPasswordField(4));
+    verbindung.add(tfPasswort);
 
     //Art
     JPanel art = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    String arten[] = {"FTP", "ABC", "DEF"};
     art.add(new JLabel("Art: "));
-    art.add(new JComboBox<String>(arten));
     verbindung.add(art);
+
+    String arten[] = {"FTP", "ABC", "DEF"};
+    JPanel tfArt = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    tfArt.add(new JComboBox<String>(arten));
+    verbindung.add(tfArt);
 
     //Host:
     JPanel host = new JPanel(new FlowLayout(FlowLayout.LEFT));
     host.add(new JLabel("Host: "));
-    host.add(new JTextField(5));
     verbindung.add(host);
+
+    JPanel tfHost = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    tfHost.add(new JTextField(4));
+    verbindung.add(tfHost);
 
     //PorT:
     JPanel port = new JPanel(new FlowLayout(FlowLayout.LEFT));
     port.add(new JLabel("Port: "));
-    port.add(new JTextField(2));
     verbindung.add(port);
+
+    JPanel tfPort = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    tfPort.add(new JTextField(1));
+    verbindung.add(tfPort);
 
     /////////////////////////////////////////////////////////////////////////
 
     // Dateien
 
     JPanel datei = new JPanel(new GridLayout(2, 2));
-  //  datei.add(new JLabel("Dateien"));
 
-//    logon.add(datei);
     mainPanel.add(datei);
+
+
     //Host:
     JPanel quelle = new JPanel(new FlowLayout(FlowLayout.LEFT));
     quelle.add(new JLabel("Quelle: "));
-    quelle.add(new JTextField(12));
     datei.add(quelle);
+
+    JPanel tfQuelle = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    tfQuelle.add(new JTextField(12));
+    datei.add(tfQuelle);
 
     //PorT:
     JPanel ziel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     ziel.add(new JLabel("Ziel: "));
-    ziel.add(new JTextField(12));
     datei.add(ziel);
+
+    JPanel tfZiel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    tfZiel.add(new JTextField(12));
+    datei.add(tfZiel);
 
     /////////////////////////////////////////////////////////////////////////
 
@@ -108,9 +128,11 @@ public class Logon {
 
     ///////////////////////////////////////////////////////////////
 
+    //Border
+
+
     verbindung.setBorder(rahmen2);
     datei.setBorder(rahmen3);
-//  rechteEingabe2.setBorder(rahmen4);
     mainPanel.setBorder(rahmen5);
 
     logon.pack();
