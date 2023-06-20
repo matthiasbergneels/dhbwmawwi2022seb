@@ -8,7 +8,15 @@ public class MapExample {
 
     Map<Integer, String> colorCodes = new TreeMap<>();
 
-    colorCodes.put(1000, "rot");
+    int key1000 = 1000;
+
+    Integer keyObject1000 = Integer.valueOf(1000);
+
+    int result = 2000 + keyObject1000;
+    result = 2000 + 1000;
+    result = 2000 + key1000;
+
+    colorCodes.put(key1000, "rot");
     colorCodes.put(2000, "blau");
     colorCodes.put(3000, "lila");
     colorCodes.put(4000, "gelb");
