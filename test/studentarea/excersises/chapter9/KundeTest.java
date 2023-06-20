@@ -1,7 +1,7 @@
 package studentarea.excersises.chapter9;
 
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -64,6 +64,4 @@ public class KundeTest {
 
 
   }
-
-
 }
