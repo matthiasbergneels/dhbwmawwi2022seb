@@ -73,7 +73,48 @@ public class Person implements Comparable<Person> {
   }
 
   public boolean equals(Object o) {
-    return false;
+    // Alias Check
+    if (this == o) {
+      return true;
+    }
+
+    // Null Check
+    if (o == null) {
+      return false;
+    }
+
+    // Type Check
+    if (this.getClass() != o.getClass()) {
+      return false;
+    }
+    Person person = (Person) o;
+
+    // Attribute checks
+    if (!this.name.equals(person.name)) {
+      return false;
+    }
+
+    if (!this.familyName.equals(person.familyName)) {
+      return false;
+    }
+
+    return this.age == person.age;
+
+    /*
+    // Attribute Check
+
+    return this.compareTo(person) == 0;
+    */
+  }
+
+  public int hashCode() {
+    int hc = 17;
+
+    hc = hc ^ 59 * age;
+    hc = hc ^ 97 * ((this.name == null) ? 0 : this.name.hashCode());
+    hc = hc ^ 56 * ((this.familyName == null) ? 0 : this.familyName.hashCode());
+
+    return hc;
   }
 
   public static class SortByName implements Comparator<Person> {
@@ -81,4 +122,28 @@ public class Person implements Comparable<Person> {
       return p1.name.toLowerCase().compareTo(p2.name.toLowerCase());
     }
   }
+
+
+  /*
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Person person = (Person) o;
+
+    if (age != person.age) return false;
+    if (!Objects.equals(name, person.name)) return false;
+    return Objects.equals(familyName, person.familyName);
+  }
+
+  @Override
+  public int hashCode() {
+    int result = name != null ? name.hashCode() : 0;
+    result = 31 * result + (familyName != null ? familyName.hashCode() : 0);
+    result = 31 * result + age;
+    return result;
+  }
+
+   */
 }
