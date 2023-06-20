@@ -93,4 +93,8 @@ public class Person implements Comparable<Person> {
     return age == person.age && Objects.equals(name, person.name) && Objects.equals(familyName, person.familyName);
   }
 
+  @Override
+  public int hashCode() {
+    return Objects.hash(name, familyName, age);
+  }
 }
