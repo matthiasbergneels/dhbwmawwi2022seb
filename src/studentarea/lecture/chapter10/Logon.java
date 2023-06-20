@@ -38,37 +38,37 @@ public class Logon {
     JPanel verbindung = new JPanel(new GridLayout(5, 2));
   //  verbindung.add(new JLabel("Verbindung"));
 
-
  //   logon.add(verbindung);
     mainPanel.add(verbindung);
 
     // User:
-    JPanel user = new JPanel(new FlowLayout());
+    JPanel user = new JPanel(new FlowLayout(FlowLayout.LEFT));
     user.add(new JLabel("User: "));
     user.add(new JTextField(4));
     verbindung.add(user);
 
+
     // Passwort:
-    JPanel passwort = new JPanel(new FlowLayout());
+    JPanel passwort = new JPanel(new FlowLayout(FlowLayout.LEFT));
     passwort.add(new JLabel("Passwort: "));
     passwort.add(new JPasswordField(5));
     verbindung.add(passwort);
 
     //Art
-    JPanel art = new JPanel(new FlowLayout());
+    JPanel art = new JPanel(new FlowLayout(FlowLayout.LEFT));
     String arten[] = {"FTP", "ABC", "DEF"};
     art.add(new JLabel("Art: "));
     art.add(new JComboBox<String>(arten));
     verbindung.add(art);
 
     //Host:
-    JPanel host = new JPanel(new FlowLayout());
+    JPanel host = new JPanel(new FlowLayout(FlowLayout.LEFT));
     host.add(new JLabel("Host: "));
     host.add(new JTextField(5));
     verbindung.add(host);
 
     //PorT:
-    JPanel port = new JPanel(new FlowLayout());
+    JPanel port = new JPanel(new FlowLayout(FlowLayout.LEFT));
     port.add(new JLabel("Port: "));
     port.add(new JTextField(2));
     verbindung.add(port);
@@ -83,13 +83,13 @@ public class Logon {
 //    logon.add(datei);
     mainPanel.add(datei);
     //Host:
-    JPanel quelle = new JPanel(new FlowLayout());
+    JPanel quelle = new JPanel(new FlowLayout(FlowLayout.LEFT));
     quelle.add(new JLabel("Quelle: "));
     quelle.add(new JTextField(12));
     datei.add(quelle);
 
     //PorT:
-    JPanel ziel = new JPanel(new FlowLayout());
+    JPanel ziel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     ziel.add(new JLabel("Ziel: "));
     ziel.add(new JTextField(12));
     datei.add(ziel);
