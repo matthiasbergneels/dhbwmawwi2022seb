@@ -1,4 +1,4 @@
-package lecture.chapter10;
+package studentarea.lecture.chapter10;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +9,7 @@ public class GridLayoutExample extends JFrame {
     super();
     this.setTitle("GridLayout Example");
 
-    this.setLayout(new GridLayout());
+    this.setLayout(new GridLayout(0,2));
 
     this.add(new JLabel("Text1"));
     this.add(new JLabel("Text2"));
