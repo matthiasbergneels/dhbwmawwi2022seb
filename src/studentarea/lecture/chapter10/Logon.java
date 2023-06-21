@@ -15,9 +15,9 @@ public class Logon {
 
     logon.setLayout(new BorderLayout());
 
-    JPanel mainPanel = new JPanel(new FlowLayout());
+    JPanel contetntPanel = new JPanel(new FlowLayout());
 
-    logon.add(mainPanel);
+    logon.add(contetntPanel);
 
     /////////////////////////////////////////////////////////////////
 
@@ -26,6 +26,7 @@ public class Logon {
     Border rahmen1 = BorderFactory.createEtchedBorder();
     Border rahmen2 = BorderFactory.createTitledBorder(rahmen1, "Verbindung");
     Border rahmen3 = BorderFactory.createTitledBorder(rahmen1, "Dateien");
+    Border rahmen4 = BorderFactory.createEmptyBorder(15,15,15,15);
     Border rahmen5 = BorderFactory.createBevelBorder(BevelBorder.LOWERED);
 
 
@@ -38,7 +39,7 @@ public class Logon {
 
 
 
-    mainPanel.add(verbindung);
+    contetntPanel.add(verbindung);
 
     // User:
     JPanel user = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -92,7 +93,7 @@ public class Logon {
 
     JPanel datei = new JPanel(new GridLayout(2, 2));
 
-    mainPanel.add(datei);
+    contetntPanel.add(datei);
 
 
     //Host:
@@ -132,7 +133,8 @@ public class Logon {
 
     verbindung.setBorder(rahmen2);
     datei.setBorder(rahmen3);
-    mainPanel.setBorder(rahmen5);
+    contetntPanel.setBorder(rahmen4);
+    contetntPanel.setBorder(rahmen5);
 
     logon.pack();
     logon.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
