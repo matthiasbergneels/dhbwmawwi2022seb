@@ -26,7 +26,6 @@ public class Logon {
     Border rahmen1 = BorderFactory.createEtchedBorder();
     Border rahmen2 = BorderFactory.createTitledBorder(rahmen1, "Verbindung");
     Border rahmen3 = BorderFactory.createTitledBorder(rahmen1, "Dateien");
-    Border rahmen4 = BorderFactory.createTitledBorder(rahmen1, "Berechtigungen");
     Border rahmen5 = BorderFactory.createBevelBorder(BevelBorder.LOWERED);
 
 
@@ -102,7 +101,7 @@ public class Logon {
     datei.add(quelle);
 
     JPanel tfQuelle = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    tfQuelle.add(new JTextField(12));
+    tfQuelle.add(new JTextField(8));
     datei.add(tfQuelle);
 
     //PorT:
@@ -111,7 +110,7 @@ public class Logon {
     datei.add(ziel);
 
     JPanel tfZiel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    tfZiel.add(new JTextField(12));
+    tfZiel.add(new JTextField(8));
     datei.add(tfZiel);
 
     /////////////////////////////////////////////////////////////////////////
