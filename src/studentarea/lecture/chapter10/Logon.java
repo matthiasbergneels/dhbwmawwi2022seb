@@ -1,26 +1,19 @@
 package studentarea.lecture.chapter10;
-
 import javax.swing.*;
 import java.awt.*;
 
 import javax.swing.border.Border;
 import javax.swing.BorderFactory;
 import javax.swing.border.BevelBorder;
-
 public class Logon {
   public static void main(String[] args) {
 
-
     JFrame logon = new JFrame("Logon");
-
     logon.setLayout(new BorderLayout());
-
     JPanel contetntPanel = new JPanel(new FlowLayout());
-
     logon.add(contetntPanel);
 
     /////////////////////////////////////////////////////////////////
-
     // Rahmen
 
     Border rahmen1 = BorderFactory.createEtchedBorder();
@@ -29,16 +22,9 @@ public class Logon {
     Border rahmen4 = BorderFactory.createEmptyBorder(15,15,15,15);
     Border rahmen5 = BorderFactory.createBevelBorder(BevelBorder.LOWERED);
 
-
-
-
     ///////////////////////////////////////////////////////////////////
-
     // Verbindung
     JPanel verbindung = new JPanel(new GridLayout(5, 2));
-
-
-
     contetntPanel.add(verbindung);
 
     // User:
@@ -49,12 +35,10 @@ public class Logon {
     tfUser.add(new JTextField(3));
     verbindung.add(tfUser);
 
-
     // Passwort:
     JPanel passwort = new JPanel(new FlowLayout(FlowLayout.LEFT));
     passwort.add(new JLabel("Passwort: "));
     verbindung.add(passwort);
-
     JPanel tfPasswort = new JPanel(new FlowLayout(FlowLayout.LEFT));
     tfPasswort.add(new JPasswordField(4));
     verbindung.add(tfPasswort);
@@ -63,7 +47,6 @@ public class Logon {
     JPanel art = new JPanel(new FlowLayout(FlowLayout.LEFT));
     art.add(new JLabel("Art: "));
     verbindung.add(art);
-
     String arten[] = {"FTP", "ABC", "DEF"};
     JPanel tfArt = new JPanel(new FlowLayout(FlowLayout.LEFT));
     tfArt.add(new JComboBox<String>(arten));
@@ -73,7 +56,6 @@ public class Logon {
     JPanel host = new JPanel(new FlowLayout(FlowLayout.LEFT));
     host.add(new JLabel("Host: "));
     verbindung.add(host);
-
     JPanel tfHost = new JPanel(new FlowLayout(FlowLayout.LEFT));
     tfHost.add(new JTextField(4));
     verbindung.add(tfHost);
@@ -82,25 +64,20 @@ public class Logon {
     JPanel port = new JPanel(new FlowLayout(FlowLayout.LEFT));
     port.add(new JLabel("Port: "));
     verbindung.add(port);
-
     JPanel tfPort = new JPanel(new FlowLayout(FlowLayout.LEFT));
     tfPort.add(new JTextField(1));
     verbindung.add(tfPort);
 
     /////////////////////////////////////////////////////////////////////////
-
     // Dateien
 
     JPanel datei = new JPanel(new GridLayout(2, 2));
-
     contetntPanel.add(datei);
-
 
     //Host:
     JPanel quelle = new JPanel(new FlowLayout(FlowLayout.LEFT));
     quelle.add(new JLabel("Quelle: "));
     datei.add(quelle);
-
     JPanel tfQuelle = new JPanel(new FlowLayout(FlowLayout.LEFT));
     tfQuelle.add(new JTextField(8));
     datei.add(tfQuelle);
@@ -109,38 +86,29 @@ public class Logon {
     JPanel ziel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     ziel.add(new JLabel("Ziel: "));
     datei.add(ziel);
-
     JPanel tfZiel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     tfZiel.add(new JTextField(8));
     datei.add(tfZiel);
 
     /////////////////////////////////////////////////////////////////////////
-
     //Buttons
 
     JPanel buttons = new JPanel(new FlowLayout(FlowLayout.CENTER));
-
     buttons.add(new JButton("OK"));
     buttons.add(new JButton("Cancel"));
 
     logon.add(buttons, BorderLayout.SOUTH);
 
-
     ///////////////////////////////////////////////////////////////
-
     //Border
-
-
     verbindung.setBorder(rahmen2);
     datei.setBorder(rahmen3);
     contetntPanel.setBorder(rahmen4);
     contetntPanel.setBorder(rahmen5);
 
+
     logon.pack();
     logon.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     logon.setVisible(true);
   }
-
-
-
 }
