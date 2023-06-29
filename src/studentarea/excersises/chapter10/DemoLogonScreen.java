@@ -37,7 +37,7 @@ public class DemoLogonScreen extends JFrame {
 
   private JPanel createVerbindungenPanel(){
     JPanel VerbindungenPanel = new JPanel(new GridLayout(0,2));
-    VerbindungenPanel.setBorder(BorderFactory.createTitledBorder("Verbindungen"));
+    VerbindungenPanel.setBorder(BorderFactory.createTitledBorder("Verbindung"));
     VerbindungenPanel.add(new JLabel("User:"));
     VerbindungenPanel.add(getLeftTextFieldPanel(2));
     VerbindungenPanel.add(new JLabel("Passwort:"));
