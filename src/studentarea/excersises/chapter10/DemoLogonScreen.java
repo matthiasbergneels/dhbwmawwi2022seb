@@ -11,13 +11,9 @@ import java.awt.*;
 public class DemoLogonScreen extends JFrame {
   public DemoLogonScreen(String title) throws HeadlessException {
     super(title);
-
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    this.setVisible(true);
-  }
 
-  public static void main(String[] args) {
-    DemoLogonScreen Window = new DemoLogonScreen("Logon");
+    //Start
     JPanel MainPanel = new JPanel(new BorderLayout());
     JPanel ButtonPanel = new JPanel(new FlowLayout());
     JPanel ContentPanel = new JPanel(new FlowLayout());
@@ -27,11 +23,12 @@ public class DemoLogonScreen extends JFrame {
       JPanel Left3 = new JPanel(new FlowLayout(FlowLayout.LEFT));
       JPanel Left4 = new JPanel(new FlowLayout(FlowLayout.LEFT));
     JPanel RightContent = new JPanel(new GridLayout(0, 2));
+
     CompoundBorder ContentBorder = BorderFactory.createCompoundBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED), BorderFactory.createEmptyBorder(15,15,15,15));
     String [] arr = {"FTP", "HTTPS", "SFTP"};
 
     //Ich glaub es geht schon wieder los
-    Window.add(MainPanel);
+    this.add(MainPanel);
     MainPanel.add(ContentPanel, BorderLayout.CENTER);
     MainPanel.add(ButtonPanel, BorderLayout.SOUTH);
 
@@ -71,6 +68,11 @@ public class DemoLogonScreen extends JFrame {
     ButtonPanel.add(new JButton("OK"));
     ButtonPanel.add(new JButton("Cancel"));
 
-    Window.pack();
+    this.pack();
+    this.setVisible(true);
+  }
+
+  public static void main(String[] args) {
+    DemoLogonScreen Window = new DemoLogonScreen("Logon");
   }
 }
