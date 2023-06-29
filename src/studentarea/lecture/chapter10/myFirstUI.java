@@ -1,6 +1,7 @@
 package studentarea.lecture.chapter10;
 
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 import java.awt.*;
 
 public class myFirstUI {
@@ -15,9 +16,6 @@ public class myFirstUI {
     Button cancelButton = new Button();
     cancelButton.setLabel("Cancel");
 
-    JLabel verbindungLabel = new JLabel("Verbindung");
-    JPanel verbindungPanel = new JPanel( new FlowLayout());
-    verbindungPanel.add(verbindungLabel);
 
     JPanel userPanel = new JPanel( new FlowLayout());
     userPanel.add(new JLabel("User:"));
@@ -58,11 +56,13 @@ public class myFirstUI {
     JPanel blueJPanelRight = new JPanel();
 
     redJPanel.setLayout(new FlowLayout());
+    redJPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED), BorderFactory.createEmptyBorder()));
     greenJPanel.setLayout(new FlowLayout());
     blueJPanelLeft.setLayout(new GridLayout(6, 1));
+    blueJPanelLeft.setBorder(BorderFactory.createTitledBorder("Verbindung"));
     blueJPanelRight.setLayout(new GridLayout(3, 1));
+    blueJPanelRight.setBorder(BorderFactory.createTitledBorder("Dateien"));
 
-    blueJPanelLeft.add(verbindungPanel);
     blueJPanelLeft.add(userPanel);
     blueJPanelLeft.add(passwordPanel);
     blueJPanelLeft.add(artPanel);
