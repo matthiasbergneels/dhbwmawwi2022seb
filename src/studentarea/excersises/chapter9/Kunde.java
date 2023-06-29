@@ -1,51 +1,91 @@
 package studentarea.excersises.chapter9;
 
-public class Kunde implements Comparable<Kunde> {
-  private String name;
-  private String vorname;
-  private int kundenNummer;
+import java.util.Comparator;
 
-  public Kunde(String name, String vorname, int nummer) {
+public class Kunde implements Comparable<Kunde> {
+
+  String name;
+  String vorname;
+  Integer kundennummer;
+
+  public static Comparator<Kunde> sortByNames = ((o1, o2) -> {
+    if (o1.name.equalsIgnoreCase(o2.name) == false){
+      return o1.name.compareTo(o2.name);
+
+    }
+    if (o1.vorname.equalsIgnoreCase(o2.vorname) == false){
+      return o1.vorname.compareTo(o2.vorname);
+
+    }
+
+    return 0;
+
+
+  });
+
+  public Kunde(String name, String vorname, Integer nummer) {
     this.name = name;
     this.vorname = vorname;
-    this.kundenNummer = nummer;
-  }
-
-  public void setName(String name) {
-    this.name = name;
+    this.kundennummer = nummer;
   }
 
   public String getName() {
     return name;
   }
 
-  public void setVorname(String vorname) {
-    this.vorname = vorname;
-  }
-
   public String getVorname() {
     return vorname;
   }
 
-  public void setKundenNummer(int nummer) {
-    this.kundenNummer = nummer;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public int getKundenNummer() {
-    return kundenNummer;
+  public void setVorname(String vorname) {
+    this.vorname = vorname;
+  }
+
+  public void setKundennummer(Integer kundennummer) {
+    this.kundennummer = kundennummer;
+  }
+
+  public Integer getKundennummer() {
+    return kundennummer;
   }
 
   @Override
-  public int compareTo(Kunde other) {
-    return Integer.compare(this.kundenNummer, other.kundenNummer);
+  public int compareTo(Kunde o) {
+
+      if (this.kundennummer != o.kundennummer){
+
+        return kundennummer.compareTo(o.kundennummer);
+      }
+
+      return 0;
+
+    }
+
+    //equals Methode überschreiben (aus Vorlesung 16.06.)
+  @Override
+  public boolean equals(Object o){
+    if (this == o) return true;
+    if (o == null) return false;
+
+    //Get Class wegen Vererbung => Betrachtung wirklich nur als Kunde unabhängig von der Referenz
+    if (o.getClass() == this.getClass()){
+      Kunde kunde = (Kunde) o;
+      //Alternativ die Attribute mit sich selbst vergleichen
+      if (this.compareTo(kunde) == 0) {
+        return true;
+      }
+    }
+
+
+    return false;
+
+
   }
 
-  @Override
-  public String toString() {
-    return "Kunde{" +
-      "name='" + name + '\'' +
-      ", vorname='" + vorname + '\'' +
-      ", kundenNummer=" + kundenNummer +
-      '}';
-  }
+
+
 }
