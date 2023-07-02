@@ -2,9 +2,6 @@ package studentarea.excersises.chapter10;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class SwingUi extends JFrame {
@@ -20,9 +17,8 @@ public class SwingUi extends JFrame {
 
 
     JPanel grid1 = new JPanel(new GridLayout(0,2));
-    Border line = new LineBorder(Color.BLACK,2);
 
-    grid1.setBorder(new TitledBorder(line, "Verbindungen"));
+    grid1.setBorder(BorderFactory.createTitledBorder("Verbindungen"));
 
     grid1.add(new JLabel("User:"));
     grid1.add(new JTextField());
@@ -35,8 +31,8 @@ public class SwingUi extends JFrame {
     grid1.add(new JLabel("Port:"));
     grid1.add(new JTextField());
 
-    JPanel grid2 = new JPanel(new GridLayout());
-    grid2.setBorder(new TitledBorder(line, "Dateien"));
+    JPanel grid2 = new JPanel(new GridLayout(0,2));
+    grid2.setBorder(BorderFactory.createTitledBorder("Dateien"));
 
     grid2.add(new JLabel("Quelle:"));
     grid2.add(new JTextField());
