@@ -5,11 +5,11 @@ public class Einwohner implements Comparable {
   private String vorName;
   private String gebName;
   private String eMail;
-  private Anrede anrede;
+  private String anrede;
   private String familienStand;
 
 
-  public Einwohner(String name, String vorName, String gebName, String eMail, Anrede anrede, String familienStand) {
+  public Einwohner(String name, String vorName, String gebName, String eMail, String anrede, String familienStand) {
     this.name = name;
     this.vorName = vorName;
     this.gebName = gebName;
@@ -61,11 +61,11 @@ public class Einwohner implements Comparable {
     this.eMail = eMail;
   }
 
-  public Anrede getAnrede() {
+  public String getAnrede() {
     return anrede;
   }
 
-  public void setAnrede(Anrede anrede) {
+  public void setAnrede(String anrede) {
     this.anrede = anrede;
   }
 
