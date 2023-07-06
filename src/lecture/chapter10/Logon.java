@@ -22,6 +22,8 @@ public class Logon extends JFrame {
     this.setAlwaysOnTop(true);
     this.setName("Logon");
     this.setResizable(false);
+    // this.setUndecorated(true);
+    // this.setOpacity(0.5f);
 
     final String[] PROTOCOL_VALUE_HELP = {"FTP", "Telnet", "SMTP", "HTTP"};
     JComboBox<String> myComboBox = new JComboBox<>(PROTOCOL_VALUE_HELP);
@@ -223,9 +225,6 @@ public class Logon extends JFrame {
     awtFileMenu.add(awtCloseMenuItem);
     AwtMenuBar.add(awtFileMenu);
     this.setMenuBar(AwtMenuBar);
-
-
-
 
     // set JFrame behavior
     this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
