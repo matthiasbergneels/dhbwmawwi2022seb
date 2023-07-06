@@ -87,9 +87,9 @@ public class EinwohnerMeldeAmtUI extends JFrame {
 
     JRadioButton singleRadioButton = new JRadioButton("ledig");
     singleRadioButton.setActionCommand(ACTION_COMMAND_SINGLE);
-    singleRadioButton.setSelected(true);
     JRadioButton marriedRadioButton = new JRadioButton("verheiratet");
     marriedRadioButton.setActionCommand(ACTION_COMMAND_MARRIED);
+    marriedRadioButton.setSelected(true);
     JRadioButton widowRadioButton = new JRadioButton("verwittwet");
     widowRadioButton.setActionCommand(ACTION_COMMAND_WIDOW);
     JRadioButton divorcedRadioButton = new JRadioButton("geschieden");
@@ -149,9 +149,6 @@ public class EinwohnerMeldeAmtUI extends JFrame {
     showListButton.setActionCommand(ACTION_COMMAND_SHOW_LIST);
 
     ActionListener buttonListener = e -> {
-
-
-
       if(e.getActionCommand().equals(ACTION_COMMAND_ADD)){
           if(listOpertions.add(
             anredeComboBox.getSelectedItem().toString(),

@@ -10,7 +10,6 @@ public class ListOperations {
   private Einwohner determineObject(String name, String firstName) {
     for (Einwohner inhabitant : list) {
       if (inhabitant.getName().equalsIgnoreCase(name) && inhabitant.getVorName().equalsIgnoreCase(firstName)) {
-
         return inhabitant;
       }
     }
