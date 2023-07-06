@@ -60,6 +60,9 @@ public class LinkedList<T> {
   }
 
   public boolean contains(T data){
+    if(firstNode == null){
+      return false;
+    }
     Node currentNode = firstNode;
     while(currentNode.nextNode != null){
       if(currentNode.getData() == data){
@@ -71,6 +74,9 @@ public class LinkedList<T> {
   }
 
   public boolean remove(T data){
+    if(firstNode == null){
+      return false;
+    }
     Node currentNode = firstNode;
     Node lastNode = firstNode;
     while(currentNode.nextNode != null) {
