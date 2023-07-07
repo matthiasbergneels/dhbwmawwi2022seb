@@ -124,9 +124,7 @@ public class LinkedList<T> {
       System.out.println("Liste ist leer!");
       return;
     }
-
     printListRecursive(firstNode);
-
   }
 
   private void printListRecursive(Node currentNode){
