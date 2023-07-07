@@ -119,6 +119,23 @@ public class LinkedList<T> {
     }
   }
 
+  public void printListRecursive(){
+    if(firstNode == null){
+      System.out.println("Liste ist leer!");
+      return;
+    }
+
+    printListRecursive(firstNode);
+
+  }
+
+  private void printListRecursive(Node currentNode){
+    System.out.println(currentNode.getData());
+    if(currentNode.getNextNode() != null){
+      printListRecursive(currentNode.getNextNode());
+    }
+  }
+
   private class Node{
     T data;
     Node nextNode;
