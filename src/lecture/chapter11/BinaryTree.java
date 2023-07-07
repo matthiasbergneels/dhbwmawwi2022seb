@@ -6,6 +6,42 @@ public class BinaryTree<T extends Comparable> {
   private int size = 0;
 
   public boolean add(T data){
+    Node newNode = new Node(data);
+
+    if(root == null){
+      this.root = newNode;
+      this.size++;
+      return true;
+    }
+
+    return add(newNode, root);
+  }
+
+  private boolean add(Node newNode, Node currentNode){
+
+    int compareToResult = currentNode.getData().compareTo(newNode.getData());
+
+    if(compareToResult > 0){
+      // leftSide
+      if(currentNode.getLeftNode() != null){
+        return add(newNode, currentNode.getLeftNode());
+      } else {
+        currentNode.setLeftNode(newNode);
+        this.size++;
+        return true;
+      }
+
+    } else if(compareToResult < 0){
+      // rightSide
+      if(currentNode.getRightNode() != null){
+        return add(newNode, currentNode.getRightNode());
+      } else {
+        currentNode.setRightNode(newNode);
+        this.size++;
+        return true;
+      }
+    }
+
     return false;
   }
 
