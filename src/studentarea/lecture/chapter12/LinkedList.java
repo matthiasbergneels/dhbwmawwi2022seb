@@ -103,6 +103,18 @@ public class LinkedList<T> {
     return count;
   }
 
+  public void printList(){
+    if(firstNode != null){
+      printListRecursive(firstNode);
+    }
+  }
+  private void printListRecursive(Node currentNode){
+    System.out.println(currentNode.data);
+    if(currentNode.nextNode != null){
+      printListRecursive(currentNode.nextNode);
+    }
+  }
+
 
 
   private class Node{

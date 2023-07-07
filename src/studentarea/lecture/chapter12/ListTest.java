@@ -10,11 +10,18 @@ public class ListTest {
 
     System.out.println(myLinkedList.contains(24));
     System.out.println(myLinkedList.size());
+    System.out.println("==============print list");
+    myLinkedList.printList();
+    System.out.println("==============end print list");
     myLinkedList.remove(24);
     System.out.println(myLinkedList.contains(24));
     System.out.println(myLinkedList.size());
     System.out.println(myLinkedList.get(0));
     myLinkedList.setData(0,12);
     System.out.println(myLinkedList.get(0));
+    System.out.println("==============print list");
+    myLinkedList.printList();
+    System.out.println("==============end print list");
+
   }
 }
