@@ -3,7 +3,7 @@ package studentarea.excersises.chapter12;
 public class BinaryTree {
   private Node Root;
 
-  public void add(int Data){
+  public void insert(int Data){
     Node currenNode = new Node(Data);
     if (Root == null){
       Root = currenNode;
@@ -34,7 +34,7 @@ public class BinaryTree {
     }
     return;
   }
-  public int get(int data){
+  public int find(int data){
     Node currentnode = new Node(data);
     return search(Root, currentnode);
   }
@@ -56,6 +56,15 @@ public class BinaryTree {
       }
       return -1;
     }
+  }
+
+  public boolean contain(int data){
+    Node currentNode = new Node(data);
+    return false;
+  }
+
+  public boolean remove(){
+    return false;
   }
 
   //TestAusgabe

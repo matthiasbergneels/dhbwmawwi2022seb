@@ -2,7 +2,7 @@ package studentarea.excersises.chapter12;
 
 public class MAIN {
   public static void main(String[] args) {
-    /*
+
     LinkedList<String> myLinkedList = new LinkedList<String>();
 
     myLinkedList.add("aa");
@@ -20,21 +20,22 @@ public class MAIN {
 
     System.out.println(myLinkedList.get(1));
 
-    System.out.println(myLinkedList.size());*/
+    System.out.println(myLinkedList.size());
+
+    myLinkedList.printListRecursive();
 
     //BinaryTree
     BinaryTree myBinaryTree = new BinaryTree();
 
-    myBinaryTree.add(5);
-    myBinaryTree.add(7);
-    myBinaryTree.add(3);
-    myBinaryTree.add(2);
-    myBinaryTree.add(4);
-    myBinaryTree.add(6);
-    myBinaryTree.add(10);
+    myBinaryTree.insert(5);
+    myBinaryTree.insert(7);
+    myBinaryTree.insert(3);
+    myBinaryTree.insert(2);
+    myBinaryTree.insert(4);
+    myBinaryTree.insert(6);
+    myBinaryTree.insert(10);
 
-
-    System.out.println(myBinaryTree.get(10));
+    System.out.println(myBinaryTree.find(10));
 
     myBinaryTree.Ausgabe();
   }

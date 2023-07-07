@@ -80,6 +80,27 @@ public class LinkedList<T> {
     return size;
   }
 
+  public void printList(){
+    Node nextNode = firstNode;
+
+    while(nextNode != null){
+      System.out.println(nextNode.getData());
+      nextNode = nextNode.getNextNode();
+    }
+  }
+
+  public void printListRecursive(){
+    Node currentNode = firstNode;
+
+    recursion(currentNode);
+  }
+
+  private void recursion(Node currentNode){
+    System.out.println(currentNode.getData());
+    if (currentNode.getNextNode()!= null) recursion(currentNode.getNextNode());
+    return;
+  }
+
 
 
   private class Node{
