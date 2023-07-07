@@ -49,6 +49,44 @@ public class BinaryTree<T extends Comparable> {
     return this.size;
   }
 
+  // traversierung (path traversal)
+
+  // inOrder -> left - current (part-tree root) - right
+  public void printInOrder(){
+    if(root == null){
+      System.out.println("Der Baum ist leer.");
+      return;
+    }
+    printInOrder(root);
+  }
+
+  private void printInOrder(Node currentNode){
+    if(currentNode.getLeftNode() != null){
+      printInOrder(currentNode.getLeftNode());
+    }
+    System.out.println(currentNode.getData());
+    if(currentNode.getRightNode() != null){
+      printInOrder(currentNode.getRightNode());
+    }
+  }
+
+  // pre-order -> current - left - right
+  public void printPreOrder(){
+    if(root == null){
+      System.out.println("Der Baum ist leer.");
+      return;
+    }
+    // TODO
+  }
+
+  // post-order -> left - right - current
+  public void printPostOrder(){
+    if(root == null){
+      System.out.println("Der Baum ist leer.");
+      return;
+    }
+    // TODO
+  }
   private class Node{
     private final T data;
     private Node leftNode;

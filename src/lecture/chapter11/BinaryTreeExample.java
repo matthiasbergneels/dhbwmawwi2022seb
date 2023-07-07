@@ -18,5 +18,10 @@ public class BinaryTreeExample {
 
     System.out.println("Anzahl an Elementen: " + numberTree.size());
 
+    System.out.println("In-Order Ausgabe:");
+    numberTree.printInOrder();
+
+
+
   }
 }
