@@ -10,6 +10,7 @@ public class TestLinkedList {
     linkedList.add(3);
 
 
+    linkedList.printListRecursive();
     linkedList.setData(2,5);
     linkedList.add(5);
     System.out.println(linkedList.contains(5));

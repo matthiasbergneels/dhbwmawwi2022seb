@@ -91,6 +91,21 @@ public class LinkedList<T> {
     return size;
   }
 
+  public void printListRecursive(){
+    this.printListRecursive(this.firstNode);
+  }
+
+  public void printListRecursive(Node node) {
+    if(node == null){
+      System.out.println(); //line break
+      return;
+    }
+
+
+    System.out.print(node + " ");
+    this.printListRecursive(node.getNextNode());
+  }
+
 
 
   private class Node{
@@ -113,5 +128,9 @@ public class LinkedList<T> {
       return nextNode;
     }
 
+    @Override
+    public String toString() {
+      return this.data.toString();
+    }
   }
 }
