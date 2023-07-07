@@ -113,6 +113,77 @@ public class BinaryTree {
 
   }
 
+  // inOrder -> left - current (part-tree root) - right
+  public void printInOrder(){
+    if(root == null){
+      System.out.println("Der Baum ist leer.");
+      return;
+    }
+    printInOrder(root);
+  }
+
+  private void printInOrder(Node currentNode){
+    if(currentNode.left != null){
+      printInOrder(currentNode.left);
+    }
+    System.out.println(currentNode.data);
+    if(currentNode.right != null){
+      printInOrder(currentNode.right);
+    }
+  }
+
+  // pre-order -> current - left - right
+  public void printPreOrder(){
+    if(isEmty()){
+      System.out.println("Der Baum ist leer.");
+      return;
+    }
+    printPreOrder(root);
+  }
+
+  private void printPreOrder(Node currentNode){
+    System.out.println(currentNode.data);
+    if(currentNode.left != null){
+      printInOrder(currentNode.left);
+    }
+
+    if(currentNode.right != null){
+      printInOrder(currentNode.right);
+    }
+
+    }
+
+
+
+
+
+
+
+
+  // post-order -> left - right - current
+  public void printPostOrder(){
+    if(isEmty()){
+      System.out.println("Der Baum ist leer.");
+      return;
+    }
+
+    printPostOrder(root);
+
+  }
+
+  private void printPostOrder(Node currentNode){
+    if(currentNode.left != null){
+      printInOrder(currentNode.left);
+    }
+
+    if(currentNode.right != null){
+      printInOrder(currentNode.right);
+    }
+
+    System.out.println(currentNode.data);
+
+  }
+
   class Node {
 
     int data;

@@ -14,6 +14,16 @@ public class TestBinaryTree {
       System.out.println("Size: " + binaryTree.getItemSize());
     }
 
+    System.out.println("In-Order");
+    binaryTree.printInOrder();
+    //Hier kann ich meinen Baum "kopieren"
+    System.out.println("Pre-Order");
+    binaryTree.printPreOrder();
+
+    System.out.println("Post-Order");
+    //Beim Löschen eines Knotens wieder verwenden von dem "Restbaum" unter dem zu löschendem Element
+    binaryTree.printPostOrder();
+
 
   }
 
