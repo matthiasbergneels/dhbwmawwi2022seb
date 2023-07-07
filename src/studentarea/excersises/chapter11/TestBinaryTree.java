@@ -10,7 +10,7 @@ public class TestBinaryTree {
 
     for (int i = 0; i < testNumbers.length; i++) {
       System.out.println("Neue Zahl: " + testNumbers[i]);
-      System.out.println(binaryTree.add(testNumbers[i]));
+      System.out.println(binaryTree.addV1(testNumbers[i]));
       System.out.println(binaryTree.getItemSize());
     }
 

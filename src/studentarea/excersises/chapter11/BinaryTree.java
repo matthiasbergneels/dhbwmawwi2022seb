@@ -16,7 +16,7 @@ public class BinaryTree {
     return false;
   }
 
-  public boolean add(int data) {
+  public boolean addV1(int data) {
     Node newNode = new Node(data);
 
     if (isEmty()) {
@@ -31,9 +31,11 @@ public class BinaryTree {
     while (currentNodeNext != null) {
 
       if (newNode.data < currentNode.data){
+        System.out.println("left");
         currentNodeNext = currentNode.left;
 
         if (currentNodeNext == null) {
+          System.out.println("saved");
           currentNode.left = newNode;
           itemSize++;
           return true;
@@ -43,9 +45,11 @@ public class BinaryTree {
         }
 
       } else if (newNode.data > currentNode.data) {
+        System.out.println("right");
 
         currentNodeNext = currentNode.right;
         if (currentNodeNext == null) {
+          System.out.println("saved");
           currentNode.right = newNode;
           itemSize++;
           return true;
