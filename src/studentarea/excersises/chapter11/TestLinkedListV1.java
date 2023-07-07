@@ -4,7 +4,7 @@ public class TestLinkedListV1 {
 
   public static void main(String[] args) {
     LinkedListV1<String> list = new LinkedListV1<>();
-    System.out.println("Is Empty:" + list.isEmty());
+    //System.out.println("Is Empty:" + list.isEmty());
 
     list.add("1");
     list.add("2");
@@ -13,6 +13,7 @@ public class TestLinkedListV1 {
     list.add("5");
     list.add("6");
 
+    /*
     System.out.println("Is Empty:" + list.isEmty());
     System.out.println("Contains 2:" + list.contains("2"));
     System.out.println("Size:" + list.size());
@@ -25,9 +26,11 @@ public class TestLinkedListV1 {
     list.setData(0, "44");
     list.setData(2, "4567");
 
+     */
 
 
-    printListContent(list);
+
+    list.printListRecursive();
 
 
 

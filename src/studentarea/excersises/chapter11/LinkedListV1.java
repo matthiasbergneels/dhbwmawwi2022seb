@@ -40,6 +40,29 @@ public class LinkedListV1<T> {
 
   }
 
+  private void printNextValue(Node currentValue) {
+    System.out.println(currentValue.data);
+    if (currentValue.nextNode != null){
+      printNextValue(currentValue.nextNode);
+
+    }
+
+  }
+
+  public void printListRecursive() {
+    if (isEmty()) {
+      System.out.println("List empty");
+      return;
+    }
+    System.out.println("Rekusiver Print: ");
+
+    printNextValue(firstNode);
+
+
+
+
+  }
+
   public T get(int index) throws IndexOutOfBoundsException {
     if (isEmty()){
       throw new IndexOutOfBoundsException();
