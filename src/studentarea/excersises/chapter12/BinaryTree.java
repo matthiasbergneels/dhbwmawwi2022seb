@@ -58,6 +58,7 @@ public class BinaryTree {
     }
   }
 
+  //TestAusgabe
   public void Ausgabe(){
     System.out.println("   "+Root.getData());
     System.out.println("  "+Root.Left.getData()+" "+Root.Right.getData());
