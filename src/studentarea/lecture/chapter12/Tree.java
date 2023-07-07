@@ -1,8 +1,45 @@
 package studentarea.lecture.chapter12;
 
-public class Tree<T> {
+public class Tree<T extends Comparable> {
 
-  private Node rootNode;
+  private Node rootNode = null;
+
+  private int size = 0;
+
+  public int size(){
+    return size;
+  }
+
+  public void add(T data){
+    if(rootNode == null){
+      rootNode = new Node(data);
+      size++;
+    }
+    else{
+      addDataToTree(data, rootNode);
+    }
+  }
+
+  private void addDataToTree(T data,Node currentNode){
+    if(data.compareTo(currentNode.data) < 0){
+      if(currentNode.leftChild != null){
+        addDataToTree(data,currentNode.leftChild);
+      }
+      else{
+        currentNode.setLeftChild(data);
+        size++;
+      }
+    }
+    else if(data.compareTo(currentNode.data) > 0){
+      if(currentNode.rightChild != null){
+        addDataToTree(data,currentNode.rightChild);
+      }
+      else{
+        currentNode.setRightChild(data);
+        size++;
+      }
+    }
+  }
   class Node{
     T data;
     Node leftChild;
