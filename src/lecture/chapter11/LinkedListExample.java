@@ -23,6 +23,10 @@ public class LinkedListExample {
 
     textList.setData(2, "mega");
 
+    System.out.println("Iterative Ausgabe: ");
     textList.printList();
+
+    System.out.println("Rekursive Ausgabe :P ");
+    textList.printListRecursive();
   }
 }
