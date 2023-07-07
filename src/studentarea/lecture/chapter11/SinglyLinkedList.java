@@ -1,6 +1,6 @@
 package studentarea.lecture.chapter11;
 
-public class LinkedList<T> {
+public class SinglyLinkedList<T> {
 
   private Node firstNode;
   private int amount = 0;
