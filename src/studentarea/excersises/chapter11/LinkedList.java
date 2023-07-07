@@ -127,6 +127,26 @@ public class LinkedList<T> {
     return size;
   }
 
+  public void printList(){
+    Node nextNode = firstNode;
+
+    while(nextNode != null){
+      System.out.println(nextNode.getData());
+      nextNode = nextNode.getNextNode();
+    }
+  }
+
+  public void printListRecursive() {
+    printListRecursiveInner(firstNode);
+  }
+
+  private void printListRecursiveInner(Node currentNode) {
+    if (currentNode == null) {
+      return;
+    }
+    System.out.println(currentNode.getData());
+    printListRecursiveInner(currentNode.getNextNode());
+  }
 
   private class Node {
     T data;
