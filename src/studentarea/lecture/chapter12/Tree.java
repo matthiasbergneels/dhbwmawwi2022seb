@@ -40,6 +40,53 @@ public class Tree<T extends Comparable> {
       }
     }
   }
+
+  public void printTree(){
+    if(rootNode != null){
+      printRecursive(rootNode);
+    }
+  }
+
+  private void printRecursive(Node currentNode){
+    if(currentNode.getLeftChild() != null){
+     printRecursive(currentNode.getLeftChild());
+    }
+    System.out.println(currentNode.getData());
+    if(currentNode.getRightChild() != null){
+      printRecursive(currentNode.getRightChild());
+    }
+  }
+
+  public void printTreePreOrder(){
+    if(rootNode != null){
+      printTreePreOrder(rootNode);
+    }
+  }
+  private void printTreePreOrder(Node currentNode){
+    System.out.println(currentNode.getData());
+    if(currentNode.getLeftChild() != null){
+      printTreePreOrder(currentNode.getLeftChild());
+    }
+    if(currentNode.getRightChild() != null){
+      printTreePreOrder(currentNode.getRightChild());
+    }
+  }
+
+  public void printTreePostOrder(){
+    if(rootNode != null){
+      printTreePostOrder(rootNode);
+    }
+  }
+
+  private void printTreePostOrder(Node currentNode){
+    if(currentNode.getLeftChild() != null){
+      printTreePostOrder(currentNode.getLeftChild());
+    }
+    if(currentNode.getRightChild() != null){
+      printTreePostOrder(currentNode.getRightChild());
+    }
+    System.out.println(currentNode.getData());
+  }
   class Node{
     T data;
     Node leftChild;
