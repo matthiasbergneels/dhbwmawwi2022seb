@@ -25,7 +25,7 @@ public class MAIN {
     myLinkedList.printListRecursive();
 
     //BinaryTree
-    BinaryTree myBinaryTree = new BinaryTree();
+    BinaryTree<Integer> myBinaryTree = new BinaryTree<>();
 
     myBinaryTree.insert(5);
     myBinaryTree.insert(7);
@@ -35,8 +35,12 @@ public class MAIN {
     myBinaryTree.insert(6);
     myBinaryTree.insert(10);
 
-    System.out.println(myBinaryTree.find(10));
+    //System.out.println(myBinaryTree.find(2));
 
     myBinaryTree.Ausgabe();
+
+    myBinaryTree.printInOrder();
+    System.out.println("\n");
+    myBinaryTree.printPostOrder();
   }
 }

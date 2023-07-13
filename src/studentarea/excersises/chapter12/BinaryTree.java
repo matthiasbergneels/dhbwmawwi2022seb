@@ -1,70 +1,120 @@
 package studentarea.excersises.chapter12;
 
-public class BinaryTree {
-  private Node Root;
+import java.util.Comparator;
 
-  public void insert(int Data){
+public class BinaryTree<T extends Comparable> {
+  private Node Root;
+  private int size =0;
+
+  public boolean insert(T Data){
     Node currenNode = new Node(Data);
     if (Root == null){
       Root = currenNode;
-      return;
+      this.size++;
+      return true;
     }
-    try {
-      put(Root, currenNode);
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
+    return put(Root, currenNode);
   }
-  private void put(Node prevNode, Node currentNode) throws RuntimeException{
-    if (prevNode.getData() < currentNode.getData() ) {
-      if (prevNode.Right != null) {
-        put(prevNode.Right, currentNode);
-        return;
-      }
-      prevNode.Right = currentNode;
+  private boolean put(Node prevNode, Node currentNode){
+    int compareNodes = prevNode.getData().compareTo(currentNode.getData());
 
-    }else if(prevNode.getData() > currentNode.getData()){
-      if (prevNode.Left != null) {
-        put(prevNode.Left, currentNode);
-        return;
+    if (compareNodes < 0) {
+      if (prevNode.getRightNode() != null) {
+        put(prevNode.getRightNode(), currentNode);
+        return true;
       }
-      prevNode.Left = currentNode;
-    }else{
-      throw new RuntimeException("das gibt es schon");
+      prevNode.setRightNode(currentNode);
+      this.size++;
+
+    }else if(compareNodes > 0){
+      if (prevNode.getLeftNode() != null) {
+        put(prevNode.getLeftNode(), currentNode);
+        return true;
+      }
+      prevNode.setLeftNode(currentNode);
+      this.size++;
+    }else {
+      return false;
     }
-    return;
+    return false;
   }
-  public int find(int data){
+  public T find(T data){
     Node currentnode = new Node(data);
     return search(Root, currentnode);
   }
 
-  private int search(Node currentNode, Node data){
-    if (currentNode.getData() == data.getData()){
+  private T search(Node currentNode, Node data){
+    int compareNodes = currentNode.getData().compareTo(data.getData());
+
+    if (compareNodes == 0) {
       return currentNode.getData();
     }
 
-    if (currentNode.getData() < data.getData() ) {
-      if (currentNode.Right != null) {
-        return search(currentNode.Right, data);
-
+    if (compareNodes < 0) {
+      if (currentNode.getRightNode() != null) {
+        return search(currentNode.getRightNode(), data);
       }
-      return -1;
     }else{
-      if (currentNode.Left != null) {
-        return search(currentNode.Left, data);
+      if (currentNode.getLeftNode() != null) {
+        return search(currentNode.getLeftNode(), data);
       }
-      return -1;
+    }
+    return null;
+  }
+  public int size (){
+    return this.size;
+  }
+  public boolean remove(){
+    return false;
+  }
+
+  public void printInOrder(){
+    if(Root == null){
+      System.out.println("Der Baum ist leer.");
+      return;
+    }
+    printInOrder(Root);
+  }
+
+  private void printInOrder(Node currentNode){
+    if(currentNode.getLeftNode() != null){
+      printInOrder(currentNode.getLeftNode());
+    }
+    System.out.println(currentNode.getData());
+    if(currentNode.getRightNode() != null){
+      printInOrder(currentNode.getRightNode());
     }
   }
 
-  public boolean contain(int data){
-    Node currentNode = new Node(data);
-    return false;
+  // pre-order -> current - left - right
+  public void printPreOrder(){
+    if(Root == null){
+      System.out.println("Der Baum ist leer.");
+      return;
+    }
+    printPreOrder(Root);
   }
 
-  public boolean remove(){
-    return false;
+  private void printPreOrder(Node currentNode){
+
+  }
+
+  // post-order -> left - right - current
+  public void printPostOrder(){
+    if(Root == null){
+      System.out.println("Der Baum ist leer.");
+      return;
+    }
+    printPostOrder(Root);
+  }
+  private void printPostOrder(Node currentNode){
+    if(currentNode.getRightNode() != null){
+      printPostOrder(currentNode.getRightNode());
+    }
+    System.out.println(currentNode.getData());
+    if(currentNode.getLeftNode() != null){
+      printPostOrder(currentNode.getLeftNode());
+    }
   }
 
   //TestAusgabe
@@ -77,12 +127,29 @@ public class BinaryTree {
   private class Node {
     private Node Left;
     private Node Right;
-    private int data;
-    Node(int data){
+    private final T data;
+    Node(T data){
       this.data = data;
+      this.Left = null;
+      this.Right = null;
+    }
+    public Node getLeftNode(){
+      return this.Left;
     }
 
-    public int getData(){
+    public Node getRightNode(){
+      return this.Right;
+    }
+
+    public void setLeftNode(Node leftNode){
+      this.Left = leftNode;
+    }
+
+    public void setRightNode(Node rightNode){
+      this.Right = rightNode;
+    }
+
+    public T getData(){
       return this.data;
     }
   }
