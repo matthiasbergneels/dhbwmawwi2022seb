@@ -51,5 +51,32 @@ public class Algorithmen {
 
   }
 
+  public static Integer[] insertionSort(Integer[] data) {
+
+    int lastUnsortedIndex = data.length - 1;
+
+    while (lastUnsortedIndex > 0) {
+      Integer maxIndex = 0;
+
+      for (int i = 1; i <= lastUnsortedIndex; i++) {
+        if (data[i] > data[maxIndex]) {
+          maxIndex = i;
+        }
+
+        Integer puffer = data[maxIndex];
+        data[maxIndex] = data[i];
+        data[i] = puffer;
+
+
+      }
+
+      lastUnsortedIndex --;
+
+    }
+
+    return data;
+
+  }
+
 
 }
