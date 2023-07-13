@@ -1,4 +1,4 @@
-package lecture.chapter11;
+package lecture.chapter12;
 
 public class BinaryTreeExample {
 
@@ -21,7 +21,10 @@ public class BinaryTreeExample {
     System.out.println("In-Order Ausgabe:");
     numberTree.printInOrder();
 
+    System.out.println("Pre-Order Ausgabe:");
+    numberTree.printPreOrder();
 
-
+    System.out.println("Post-Order Ausgabe:");
+    numberTree.printPostOrder();
   }
 }

@@ -1,4 +1,4 @@
-package lecture.chapter11;
+package lecture.chapter12;
 
 public class BinaryTree<T extends Comparable> {
 
@@ -76,7 +76,19 @@ public class BinaryTree<T extends Comparable> {
       System.out.println("Der Baum ist leer.");
       return;
     }
-    // TODO
+    printPreOrder(root);
+  }
+
+  private void printPreOrder(Node currentNode){
+    System.out.println(currentNode.getData());
+
+    if(currentNode.getLeftNode() != null){
+      printPreOrder(currentNode.getLeftNode());
+    }
+
+    if(currentNode.getRightNode() != null){
+      printPreOrder(currentNode.getRightNode());
+    }
   }
 
   // post-order -> left - right - current
@@ -85,8 +97,22 @@ public class BinaryTree<T extends Comparable> {
       System.out.println("Der Baum ist leer.");
       return;
     }
-    // TODO
+    printPostOrder(root);
   }
+
+  private void printPostOrder(Node currentNode){
+    if(currentNode.getLeftNode() != null){
+      printPostOrder(currentNode.getLeftNode());
+    }
+
+    if(currentNode.getRightNode() != null){
+      printPostOrder(currentNode.getRightNode());
+    }
+
+    System.out.println(currentNode.getData());
+  }
+
+
   private class Node{
     private final T data;
     private Node leftNode;
