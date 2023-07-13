@@ -5,6 +5,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
+
+import static org.junit.jupiter.api.Assertions.assertTimeout;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SortingAlgorithmsTest {
@@ -44,6 +47,11 @@ class SortingAlgorithmsTest {
       int[] sortedArray = SortingAlgorithms.quickSort(toSort.clone());
       assertTrue(isSorted(sortedArray));
     }
+    @Test
+    void quickSortTime(){
+      assertTimeout(Duration.ofMillis(1), ()->{int[] sortedArray = SortingAlgorithms.quickSort(toSort.clone());});
+    }
+
   }
 
   @Nested
